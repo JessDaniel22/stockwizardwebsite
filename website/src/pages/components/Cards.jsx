@@ -44,10 +44,7 @@ const Cards = ({ logo, companyName, followStatus, title, content, prediction, da
         {companyName} 
         {followStatus} 
         {title}
-        {timeAgoText} - updates</p>
-      
-        
-     
+        {timeAgoText} - updates</p> 
       <p>{content}</p>
       <p>{prediction}</p> 
       
