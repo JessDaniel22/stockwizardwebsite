@@ -5,16 +5,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 import "./App.css";
-import Header from "./pages/components/Header";
-
-
-
+import React from "react";
+import SlidingTabs from "./pages/components/SlidingTabs";
+import NewsArticleComponent from "./pages/components/NewsArticleContainer";
+import Nav from "./pages/components/Nav";
 
 
 function HomePage() {
-
   return (
-    <Header/>
+    <div className="App">
+    <Nav/>
+    <SlidingTabs />
+    <NewsArticleComponent />
+  </div>
   );
 }
 
