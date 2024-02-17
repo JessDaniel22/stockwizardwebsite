@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faArrowUp, faArrowDown, faQuestionCircle} from '@fortawesome/free-solid-svg-icons';
 
 const NewsArticleComponent = () => {
+
   // Example data for the cards
   const cardsData = [
    {logo: '🍎', 
@@ -148,7 +149,7 @@ const NewsArticleComponent = () => {
   ];
 
   return (
-    <div className="cards-container">
+    <div className="cards-container" >
       {cardsData.map((card, index) => (
         <Cards key={index} logo={card.logo} companyName={card.companyName} followStatus={card.followStatus}  title={card.title} date={card.date} content={card.content} prediction={card.prediction}/>
       ))}

@@ -1,0 +1,46 @@
+/* CompanyHeader.css */
+.company-header {
+    display: flex;
+
+    align-items: flex-start;
+    gap: 50px;
+    margin: 30px
+
+  }
+  
+  .company-title {
+
+    color: #06132C; 
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+    margin-right: 10px; /* Add some space between the title and the logo */
+  }
+  
+  .company-logo {
+    margin-top: auto;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-right: 100px;
+  }
+  
+  .follow-button {
+    cursor: pointer;
+    width: 150px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #06132C;
+    color: white;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+
+
+  }
