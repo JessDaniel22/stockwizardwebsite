@@ -15,5 +15,31 @@
   .top{
     display: flex;
     align-items: center; /* Vertically aligns children */
+    justify-content: space-between; /* Horizontally aligns children */
+  }
 
+  .title{
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .date{
+    display: flex;
+    align-items: center;
+    justify-self: right ;
   }

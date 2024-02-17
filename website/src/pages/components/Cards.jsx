@@ -41,12 +41,17 @@ const Cards = ({ logo, companyName, followStatus, title, content, prediction, da
     <div className="card">
         <p className='top'>
         {logo} 
-        {companyName} 
+        <span style={{ margin: '0 8px' }}>
+        {companyName}
+        </span>
+        <span style={{ margin: '0 2px' }}>
         {followStatus} 
-        {title}
-        {timeAgoText} - updates</p> 
-      <p>{content}</p>
-      <p>{prediction}</p> 
+        </span>
+        <p className='date'>{timeAgoText} - updates</p>
+        </p> 
+        <p className='title'>{title}</p>
+      <p className='content'>{content}</p>
+      <p className='prediction'>{prediction}</p> 
       
     </div>
   );
