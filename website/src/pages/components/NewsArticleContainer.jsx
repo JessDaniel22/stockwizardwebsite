@@ -22,8 +22,100 @@ const NewsArticleComponent = () => {
   <span style={{ margin: '0 2px' }}>
     <FontAwesomeIcon icon={faArrowDown} color="red" />
   </span>
+  <span style={{ margin: '0 8px' }}>
+    <FontAwesomeIcon icon={faQuestionCircle} color="white" />
+  </span>
+</p>
+      
+    </div>
+  ),
+   date: new Date('2021-10-01T12:00:00')},
+   {logo: '🍎', 
+   companyName: 'Apple Inc.', 
+   followStatus: '(Following)', 
+   title: 'News Article Title',
+   content: 'Summary.... something interesting goes here',
+   prediction: (
+    <div>
+      <p>
+  Prediction: 
+  <span style={{ margin: '0 8px' }}>
+    <FontAwesomeIcon icon={faArrowUp} color="green" />
+  </span>
   <span style={{ margin: '0 2px' }}>
-    <FontAwesomeIcon icon={faQuestionCircle}  />
+    <FontAwesomeIcon icon={faArrowDown} color="red" />
+  </span>
+  <span style={{ margin: '0 8px' }}>
+    <FontAwesomeIcon icon={faQuestionCircle} color="white" />
+  </span>
+</p>
+      
+    </div>
+  ),
+   date: new Date('2021-10-01T12:00:00')},
+   {logo: '🍎', 
+   companyName: 'Apple Inc.', 
+   followStatus: '(Following)', 
+   title: 'News Article Title',
+   content: 'Summary.... something interesting goes here',
+   prediction: (
+    <div>
+      <p>
+  Prediction: 
+  <span style={{ margin: '0 8px' }}>
+    <FontAwesomeIcon icon={faArrowUp} color="green" />
+  </span>
+  <span style={{ margin: '0 2px' }}>
+    <FontAwesomeIcon icon={faArrowDown} color="red" />
+  </span>
+  <span style={{ margin: '0 8px' }}>
+    <FontAwesomeIcon icon={faQuestionCircle} color="white" />
+  </span>
+</p>
+      
+    </div>
+  ),
+   date: new Date('2021-10-01T12:00:00')},
+   {logo: '🍎', 
+   companyName: 'Apple Inc.', 
+   followStatus: '(Following)', 
+   title: 'News Article Title',
+   content: 'Summary.... something interesting goes here',
+   prediction: (
+    <div>
+      <p>
+  Prediction: 
+  <span style={{ margin: '0 8px' }}>
+    <FontAwesomeIcon icon={faArrowUp} color="green" />
+  </span>
+  <span style={{ margin: '0 2px' }}>
+    <FontAwesomeIcon icon={faArrowDown} color="red" />
+  </span>
+  <span style={{ margin: '0 8px' }}>
+    <FontAwesomeIcon icon={faQuestionCircle} color="white" />
+  </span>
+</p>
+      
+    </div>
+  ),
+   date: new Date('2021-10-01T12:00:00')},
+   {logo: '🍎', 
+   companyName: 'Apple Inc.', 
+   followStatus: '(Following)', 
+   title: 'News Article Title',
+   content: 'Summary.... something interesting goes here',
+   prediction: (
+    <div>
+      <p>
+  Prediction: 
+  <span style={{ margin: '0 8px' }}>
+    <FontAwesomeIcon icon={faArrowUp} color="green" />
+  </span>
+  <span style={{ margin: '0 2px' }}>
+    <FontAwesomeIcon icon={faArrowDown} color="red" />
+  </span>
+  <span style={{ margin: '0 8px' }}>
+    <FontAwesomeIcon icon={faQuestionCircle} color="white" />
   </span>
 </p>
       

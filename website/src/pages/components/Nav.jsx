@@ -1,5 +1,8 @@
 import React from 'react';
 import './Nav.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 function header() {
   return (
@@ -23,8 +26,8 @@ function header() {
         </form>
       </div>
       <div className="icons">
-        <div className="notif-bell">🔔</div> {/* Replace with an icon */}
-        <div className="profile-icon">👤</div> {/* Replace with an icon or profile picture */}
+        <div className="notif-bell"><FontAwesomeIcon icon={faBell} color='white' /></div> {/* Replace with an icon */}
+        <div className="profile-icon"><FontAwesomeIcon icon={faUserCircle} color='white'/></div> {/* Replace with an icon or profile picture */}
       </div>
     </nav>
   )

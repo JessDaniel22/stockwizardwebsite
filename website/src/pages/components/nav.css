@@ -23,7 +23,7 @@
 }
 
 .search-form {
-  width: 50%;
+  width: 100%;
   flex-shrink: 0;
   background: #D9D9D9;
   padding: 6px;
@@ -50,16 +50,22 @@
 } 
 
 .navbar {
+    position: fixed;
+    top: 0; /* Align navbar to the top of the viewport */
+    left: 0; /* Align navbar to the left of the viewport */
+    width: 100%; /* Ensure navbar spans the full width of the viewport */
+    z-index: 1000; /* Ensure navbar stays on top of other content */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 32px;
+
     background-color: #333;
     flex-shrink: 0;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: space-between;
     background-color: #06132C;
+    padding: 0px 20px 10px 20px;
   }
   
   .search-bar input {
@@ -68,6 +74,7 @@
   
   .icons div {
     display: inline-block;
-    margin-left: 20px;
+    margin: 0px 20px 0px 20px;
     cursor: pointer;
+    font-size: 28px;
   }

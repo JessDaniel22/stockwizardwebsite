@@ -39,21 +39,18 @@ const Cards = ({ logo, companyName, followStatus, title, content, prediction, da
 
   return (
     <div className="card">
-        <p className='top'>
-        {logo} 
-        <span style={{ margin: '0 8px' }}>
-        {companyName}
-        </span>
-        <span style={{ margin: '0 2px' }}>
-        {followStatus} 
-        </span>
-        <p className='date'>{timeAgoText} - updates</p>
-        </p> 
-        <p className='title'>{title}</p>
-      <p className='content'>{content}</p>
-      <p className='prediction'>{prediction}</p> 
-      
+    <div className='top'>
+      <div className="info">
+        <span className="logo">{logo}</span>
+        <span className="company-name">{companyName}</span>
+        <span className="follow-status">{followStatus}</span>
+      </div>
+      <p className='date'>{timeAgoText}</p>
     </div>
+    <p className='title'>{title}</p>
+    <p className='content'>{content}</p>
+    <p className='prediction'>{prediction}</p>
+  </div>
   );
 };
 
