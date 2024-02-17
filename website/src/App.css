@@ -1,0 +1,13 @@
+/* 
+const Dropdown = ({ label, options, onChange }) => {
+    return (
+      <label className="dropdown">
+        {label}
+        <select onChange={onChange}>
+          {options.map(option => (
+            <option value={option.value} key={option.value}>{option.label}</option>
+          ))}
+        </select>
+      </label>
+    );
+  }; */
