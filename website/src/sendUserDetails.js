@@ -3,8 +3,9 @@ async function sendUserDetails(email, password) {
     const details = { email: email, password: password}; 
     const socket = new WebSocket(url);
 
-    //Open connection to websocket
+    //Open connection to web socket
     socket.addEventListener('open', (event) => {
+        console.log('Socket opened'); 
         socket.send(JSON.stringify(details));
     });
 
