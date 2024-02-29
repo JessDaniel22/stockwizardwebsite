@@ -1,6 +1,6 @@
 async function sendUserDetails(email, password) {
     const url = 'wss://cs261se.containers.uwcs.co.uk'; 
-    const details = { email: email, password: password}; 
+    const details = {"type": "LOGIN_REQUEST", "details":{"email": email, "password": password}}; 
     const socket = new WebSocket(url);
 
     //Open connection to web socket
