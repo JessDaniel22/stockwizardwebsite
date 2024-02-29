@@ -6,9 +6,12 @@ async function displayArticles() {
   function connect() {
     let socket = new WebSocket(url);
 
+
     socket.onmessage = (event) => {
-      const articles = JSON.parse(event.data);
-      articleProcessing(articles);
+      const eventType = JSON.parse(event.data);
+      if (eventType == "ARTICLE_RESPONSE" || eventType == "ARTICLE_PUSH") {
+        articleProcessing(articles);  
+      }
     };
 
     socket.addEventListener('open', (event) => {
