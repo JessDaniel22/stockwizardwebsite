@@ -1,0 +1,54 @@
+.tabs {
+    display: flex;
+    height: 80px;
+    width: 400px;
+    margin: 150px auto 10px;
+  }
+  
+  .tab1 {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    border-radius: 20px 0px 0px 20px;
+    border-top: 1px solid #06132c;
+    border-bottom: 1px solid #06132c;
+    border-left: 1px solid #06132c;
+    background: #FFF;
+  }
+  
+  .tab2 {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    border-radius: 0px 20px 20px 0px;
+    border: 1px solid #06132C;
+    background: #FFF;
+  }
+  
+  .tab1.active, .tab2.active {
+    background-color: #06132c;
+      color: white;
+  }
+  
+  
+  .stocks-content {
+    border-radius: 30px 0px 0px 30px;
+    padding: 20px;
+  
+  }
+  
+  .news-content {
+      width: 1274px;
+      
+  }
+  

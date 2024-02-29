@@ -5,19 +5,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 import React from "react";
-import SlidingTabs from "./components/SlidingTabs";
-import NewsArticleComponent from "./components/NewsArticleContainer";
 import Nav from "./components/Nav";
+import StocksNews from "./components/StocksNews";
 
 
-function HomePage() {
+function ProfilePage() {
   return (
     <div className="App">
-    <Nav/>
-    <SlidingTabs />
-    <NewsArticleComponent />
+      <Nav />
+    <StocksNews />
   </div>
   );
 }
 
-export default HomePage;
+export default ProfilePage;

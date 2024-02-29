@@ -1,80 +1,108 @@
 .card {
-    border-radius: 20px;
-    border: 1px solid #C8C8C8;
-    background: #EEE;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 30px;
-    margin: 0px 250px 50px 250px;
-    height: 250px;
+  border-radius: 15px;
+  background: #EEE;
+  border: 1px solid #C8C8C8;
+  border: none;
+  padding: 30px;
+  margin: 0px 250px 30px 250px;
+  height: 250px;
+  position: relative;
+}
 
-  }
+.time-ago {
+  font-size: 0.8rem; /* Smaller font size for the timing info */
+  color: #666; /* Lighter text color */
+  margin-top: 10px; /* Space above the timing info */
+}
 
-  .time-ago {
-    font-size: 0.8rem; /* Smaller font size for the timing info */
-    color: #666; /* Lighter text color */
-    margin-top: 10px; /* Space above the timing info */
-  }
-
-  .top{
-    display: flex;
-    align-items: center; /* Vertically aligns children */
-    
-  }
+.top{
+  display: flex;
+  align-items: center; /* Vertically aligns children */
+  
+}
 
 .card .top .logo,
 .card .top .company-name,
 .card .top .follow-status {
-  margin-right: 8px; /* Adjust the space as needed */
+margin-right: 8px; /* Adjust the space as needed */
 }
 
 .card .top .follow-status {
-  font-style: italic;
+font-style: italic;
 }
 
 .card .date {
-  margin-top: 4px;  
+margin-top: 4px;  
 }
 
 .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .info .logo,
-  .info .company-name,
-  .info .follow-status {
-    margin-right: 8px; /* Adjust the space as needed */
-  }
-  
-  .info .follow-status {
-    font-style: italic;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .title{
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.info .logo,
+.info .company-name,
+.info .follow-status {
+  margin-right: 8px; /* Adjust the space as needed */
+}
 
-  .content{
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 20px;
-  }
+.info .follow-status {
+  font-style: italic;
+}
 
-  .date{
-    display: flex;
-    align-items: center;
-    justify-self: right ;
-  }
+.title{
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content{
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.date{
+  display: flex;
+  align-items: center;
+  justify-self: right ;
+}
+
+
+.card-tooltip {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px); /* Adjust as necessary */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1; /* Ensure it's above other content */
+}
+
+.card-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -5px; /* Adjust the position of the triangle */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #f9f9f9 transparent;
+}
+
+.card:hover .card-tooltip {
+  display: block; /* Show the tooltip on hover */
+}

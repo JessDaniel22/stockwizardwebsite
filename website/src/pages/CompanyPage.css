@@ -1,85 +1,84 @@
 .split-page {
-    margin-top: 150px;
-    display: flex;
-    height: 100vh; /* Make the container take up the full height of the viewport */
-  }
-  
-  .data-container, .company-info {
-    flex: 1; /* Each child takes up an equal amount of space */
+  margin-top: 150px;
+  display: flex;
+  height: 100vh; /* Make the container take up the full height of the viewport */
+}
 
-    padding: 20px;
+.data-container, .company-info {
+  flex: 1; /* Each child takes up an equal amount of space */
 
-    
-  }
-  
-  .news-container {
-    max-height: 400px; /* Adjust based on the available space in your layout */
-    overflow-y: auto; /* Enables vertical scrolling */
-    padding: 10px;
-  }
-  
-  .data-container {
-    background-position: 50%; /* Center the background image */
-    background-size: 400px, cover; /* Cover the entire container */
-    background-repeat: no-repeat;
-  }
+  padding: 20px;
 
-  .graph-container {
-    margin-top: 20px;
-    margin-bottom: 40px;
-    width: 650px;
-    height: 400px;
-    flex-shrink: 0;
-    padding: 32px;
-    border-radius: 20px;
-    background: #ECECEC;
-  }
+  
+}
 
-  .news-container {
-    margin-top: 20px;
-    width: 650px;
-    height: 400px;
-    flex-shrink: 0;
-    padding: 32px;
-    border-radius: 20px;
-    background: #ECECEC;
-  }
-  
-  .info-container h1{
-    font-size: 28px;
-    font-weight: 500;
-    color: #06132C;
-    margin-bottom: 20px;
-  }
-  
-  .info-container label{
-    font-size: 15px;
-    font-weight: 200;
-    color: #06132C;
-  }
-  
-  .company-info {
-    flex-direction: column; /* Stack the register details vertically */
-    padding: 20px; /* Add some padding around the register details */
-  }
-  
-  .info-container{
-    width: 650px;
-    height: 876px;
-    flex-shrink: 0;
-    color: white;
-    padding: 32px;
-    border-radius: 30px;
-    background-color: #06132C;
-  
-  }
-  
-  .info-container header{
-    text-decoration: underline;
-    margin-bottom: 15px;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
- 
+.news-container {
+  max-height: 400px; /* Adjust based on the available space in your layout */
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding: 10px;
+}
+
+.data-container {
+  background-position: 50%; /* Center the background image */
+  background-size: 400px, cover; /* Cover the entire container */
+  background-repeat: no-repeat;
+}
+
+.graph-container {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 650px;
+  height: 400px;
+  flex-shrink: 0;
+  padding: 32px;
+  border-radius: 20px;
+  background: #ECECEC;
+}
+
+.news-container {
+  margin-top: 20px;
+  width: 650px;
+  height: 400px;
+  flex-shrink: 0;
+  padding: 32px;
+  border-radius: 20px;
+  background: #ECECEC;
+}
+
+.info-container h1{
+  font-size: 28px;
+  font-weight: 500;
+  color: #06132C;
+  margin-bottom: 20px;
+}
+
+.info-container label{
+  font-size: 15px;
+  font-weight: 200;
+  color: #06132C;
+}
+
+.company-info {
+  flex-direction: column; /* Stack the register details vertically */
+  padding: 20px; /* Add some padding around the register details */
+}
+
+.info-container{
+  width: 650px;
+  height: 876px;
+  flex-shrink: 0;
+  color: white;
+  padding: 32px;
+  border-radius: 30px;
+  background-color: #06132C;
+
+}
+
+.info-container header{
+  text-decoration: underline;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

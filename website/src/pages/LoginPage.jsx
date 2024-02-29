@@ -1,5 +1,4 @@
 import "./LoginPage.css";
-import { sendUserDetails } from "./sendUserDetails.js";
 import React, { useState } from "react";
 
 function LoginPage() {
@@ -8,7 +7,6 @@ function LoginPage() {
 
   const handleLogin = () => {
     // Perform login logic here
-    sendUserDetails();
     console.log("Logging in...");
   };
 

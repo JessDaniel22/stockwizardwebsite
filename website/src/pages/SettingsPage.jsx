@@ -1,12 +1,12 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "remixicon/fonts/remixicon.css";
 
-import "./App.css";
+import "./SettingsPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 import React, { useState } from 'react';
-import Nav from "./pages/components/Nav";
+import Nav from "./components/Nav";
 
 
 function SettingsPage() {

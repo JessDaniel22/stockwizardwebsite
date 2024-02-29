@@ -13,7 +13,7 @@ const Cards = ({ logo, companyName, followStatus, title, content, prediction, da
     const hours = Math.floor(minutes / 60);
     const days = Math.floor(hours / 24);
 
-    if (days > 0) {
+    if (days > 0) { // this needs to be changed 
       return `${days} days ago`;
     } else if (hours > 0) {
       return `${hours} hours ago`;
@@ -50,6 +50,11 @@ const Cards = ({ logo, companyName, followStatus, title, content, prediction, da
     <p className='title'>{title}</p>
     <p className='content'>{content}</p>
     <p className='prediction'>{prediction}</p>
+    <div className="card-tooltip">
+    <div className="tooltip-content">
+      More information here...
+    </div>
+  </div>
   </div>
   );
 };

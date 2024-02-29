@@ -1,85 +1,84 @@
 .split-page {
-    display: flex;
-    height: 100vh; /* Make the container take up the full height of the viewport */
-  }
-  
-  .image-container, .login-details {
-    flex: 1; /* Each child takes up an equal amount of space */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    
-  }
-  
-  .image-container {
-    background-image: url('../assets/cover-image-removebg-preview.png'), radial-gradient(circle at center top, #0a2349 ,  #0c2246,#091a36, #081533,  #05152e, #04142d, #06132C, #020f22, #010025);
-    /* linear-gradient(90deg, #020f22,#010e21, #021325, #0c2246) */
-    background-position: 50%; /* Center the background image */
-    background-size: 400px, cover; /* Cover the entire container */
-    background-repeat: no-repeat;
-    
-  }
+  display: flex;
+  height: 100vh; /* Make the container take up the full height of the viewport */
+}
 
-  .form-container h1{
-    font-size: 28px;
-    font-weight: 500;
-    color: #06132C;
-    margin-bottom: 20px;
+.image-container, .login-details {
+  flex: 1; /* Each child takes up an equal amount of space */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   
-  }
+}
 
-  .form-container label{
-    font-size: 15px;
-    font-weight: 200;
-    color: #06132C;
-  }
+.image-container {
+  background-image: url('../assets/cover-image-removebg-preview.png'), radial-gradient(circle at center top, #0a2349 ,  #0c2246,#091a36, #081533,  #05152e, #04142d, #06132C, #020f22, #010025);
+  /* linear-gradient(90deg, #020f22,#010e21, #021325, #0c2246) */
+  background-position: 50%; /* Center the background image */
+  background-size: 400px, cover; /* Cover the entire container */
+  background-repeat: no-repeat;
   
-  .login-details {
-    flex-direction: column; /* Stack the login details vertically */
-    padding: 20px; /* Add some padding around the login details */
-  }
-  
-  /* Additional styling for inputs and button */
-  .login-details input[type="text"],
-  .login-details input[type="password"] {
-    margin: 15px 0 30px 0; /* Add some vertical margin */
-    padding: 20px; /* Add some padding inside the inputs */
-    width: calc(100% - 60px); /* Make inputs a bit smaller than their container */
-    border-radius: 32px;
-    border: none;
-    background: #E8E8E8;
-  }
-  
-  .login-details button {
-    margin-left: 12px;
-    height: 52px;
-    flex-shrink: 0;
-    width: 90%;
-    border-radius: 32px;
-    border: none;
-    background: #06132C;
-    color: #FFFEFE;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-  
-  .form-container{
-    width: 400px;
-    height: 400px;
-    padding: 32px;
-    border-radius: 30px;
-    background-color: #F7F7F7;
-  
-  }
-  
-  .signup-link{
-    text-align: center;
-    margin-top: 20px;
-    font-size: 12px;
-    color: #06132C;
-    text-decoration: none;
-  }
-  
+}
+
+.form-container h1{
+  font-size: 28px;
+  font-weight: 500;
+  color: #06132C;
+  margin-bottom: 20px;
+
+}
+
+.form-container label{
+  font-size: 15px;
+  font-weight: 200;
+  color: #06132C;
+}
+
+.login-details {
+  flex-direction: column; /* Stack the login details vertically */
+  padding: 20px; /* Add some padding around the login details */
+}
+
+/* Additional styling for inputs and button */
+.login-details input[type="text"],
+.login-details input[type="password"] {
+  margin: 15px 0 30px 0; /* Add some vertical margin */
+  padding: 20px; /* Add some padding inside the inputs */
+  width: calc(100% - 60px); /* Make inputs a bit smaller than their container */
+  border-radius: 32px;
+  border: none;
+  background: #E8E8E8;
+}
+
+.login-details button {
+  margin-left: 12px;
+  height: 52px;
+  flex-shrink: 0;
+  width: 90%;
+  border-radius: 32px;
+  border: none;
+  background: #06132C;
+  color: #FFFEFE;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.form-container{
+  width: 400px;
+  height: 400px;
+  padding: 32px;
+  border-radius: 30px;
+  background-color: #F7F7F7;
+
+}
+
+.signup-link{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #06132C;
+  text-decoration: none;
+}

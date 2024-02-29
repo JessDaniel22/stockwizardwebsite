@@ -1,5 +1,4 @@
 import "./SignUpPage.css";
-import { sendUserDetails } from "./sendUserDetails.js";
 import React, { useState } from "react";
 
 function SignUpPage() {
@@ -10,7 +9,6 @@ function SignUpPage() {
 
   const handleRegister = () => {
     // Perform register logic here
-    sendUserDetails(); 
     console.log("registering...");
   };
 

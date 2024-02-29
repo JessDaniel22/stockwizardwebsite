@@ -1,46 +1,47 @@
 .tabs-container {
-    font-family: Arial, sans-serif;
-    padding: 0 24px;
-    margin-top: 150px;
-   
-  }
-  
-.tabs {
-    display: flex;
-    overflow-x: auto; /* Allows horizontal scrolling */
-    margin-bottom: 20px;
-    cursor: pointer;
-    -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS devices */
-    padding-bottom: 8px;
-  }
-  
-.tab {
-    background-color: #06132C;
-    margin-right: 32px;
-    width: 150px;
-    height: 70px;
-    border-radius: 10px;
-    flex-shrink: 0;
-    color: #FFF;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    box-sizing: border-box; /* Ensures padding doesn't add to the tab's width */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 0 24px;
+  margin-top: 150px;
+  width: 100%;
+ 
 }
-    
+
+.tabs {
+  display: flex;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS devices */
+  padding-bottom: 8px;
+}
+
+.tab {
+  background-color: #06132C;
+  margin-right: 32px;
+  width: 150px;
+  height: 70px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  color: #FFF;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  box-sizing: border-box; /* Ensures padding doesn't add to the tab's width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+  
 .tab.active {
-    background-color: #3d5278;
-  }
+  background-color: #3d5278;
+}
 
 .info-icon {
-    display: inline-block;
-    margin-left: 20px; /* Adjust space between text and icon */
-    vertical-align: middle; /* Aligns icon with the middle of the text */
-    font-size: 0.8em; /* Adjusts the size of the icon */
-  }
+  display: inline-block;
+  margin-left: 20px; /* Adjust space between text and icon */
+  vertical-align: middle; /* Aligns icon with the middle of the text */
+  font-size: 0.8em; /* Adjusts the size of the icon */
+}
 
