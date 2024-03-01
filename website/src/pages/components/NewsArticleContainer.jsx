@@ -227,7 +227,7 @@ const NewsArticleComponent = () => {
       const socket = new WebSocket(url);
 
       socket.onmessage = (event) => {
-        const eventType = JSON.parse(event.data);
+        const eventType = JSON.parse(event);
         if (eventType.type === "ARTICLE_RESPONSE" || eventType.type === "ARTICLE_PUSH") {
           const cleaned = cleanArticles(eventType.articles); // Use received articles
           setArticles(cleaned); // Update the state with the cleaned articles
