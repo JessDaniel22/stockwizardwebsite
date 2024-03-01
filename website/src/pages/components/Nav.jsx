@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef  } from 'react';
-import './Nav.css';
+import './nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faChartLine, faCog, faNewspaper, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'react-router-dom';

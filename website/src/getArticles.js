@@ -48,25 +48,6 @@ async function displayArticles() {
     toContainer(cleanedArticles);
   }
 }
-//aaaaaaaaaaaa
-function cleanArticles(articles) {
-
-  var cleanedArticles = [];
-  for (let i = 0; i < articles.length; i++) {
-    //Get components needed for container
-    var article = {
-      logo: "temp",
-      companyName: "temp",
-      followStatus: "temp",
-      title: articles[i].title,
-      content: articles[i].summary,
-      prediction: "temp", // The prediction for the company
-      date: new Date(articles[i].time_published) // The date of the news article
-    }
-    cleanedArticles.push[article];
-  }
-  return cleanedArticles;
-}
 
 function toContainer(cleanedArticles){
   for (let i = 0; i < cleanedArticles.length; i++) {
