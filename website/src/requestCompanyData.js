@@ -1,6 +1,6 @@
-async function sendUserDetails(email, password) {
+async function sendUserDetails(ticker) {
     const url = 'wss://cs261se.containers.uwcs.co.uk'; 
-    const details = {"type": "LOGIN_REQUEST", "details":{"email": email, "password": password}}; 
+    const details = {"type": "COMPANY_REQUEST", "ticker":ticker}; 
     const socket = new WebSocket(url);
 
     //Open connection to web socket
@@ -13,13 +13,6 @@ async function sendUserDetails(email, password) {
     socket.addEventListener('message', (event) => {
         console.log('Server message: ', event.data);
     });
-
-    socket.onmessage = (event) => {
-        const eventData = JSON.parse(event);
-        if (eventData.type == "LOGIN_RESPONSE") {
-            localStorage.setItem('user', eventData.token)
-        }
-      };
 
     //Handle connection closed
     socket.addEventListener('close', (event) => {
