@@ -42,8 +42,8 @@ function HomePage() {
 
 const App = () => {
   return (
-    <AuthProvider>
-      <div>
+    
+     <Router>
       <Routes>
       {/* <Route path="/" element={<ProtectedRoute><HomePage/></ProtectedRoute>}/> */}
       <Route path="/" element={<HomePage/>}/>
@@ -51,13 +51,10 @@ const App = () => {
       <Route path="/signup" element={<SignUpPage/>}/>
       <Route path="/settings" element={<SettingsPage/>}/>
       <Route path="/profile" element={<ProfilePage/>}/>
-      <Route path="/company/:companyId" element={<CompanyPage/>}/>
+      <Route path="/company/:name" element={<CompanyPage/>}/>
       </Routes>
-     
-    </div>
-    </AuthProvider>
-    
-    
+     </Router>
+      
   );
 }
 
