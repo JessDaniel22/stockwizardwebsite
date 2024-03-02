@@ -229,7 +229,8 @@ const NewsArticleComponent = () => {
       socket.onmessage = (event) => {
         const eventType = JSON.parse(event);
         if (eventType.type === "ARTICLE_RESPONSE" || eventType.type === "ARTICLE_PUSH") {
-          const cleaned = cleanArticles(eventType.articles); // Use received articles
+          const temp = cleanArticles(eventType.articles);
+          const cleaned = mapArticles(temp); // Use received articles
           setArticles(cleaned); // Update the state with the cleaned articles
         }
       };
@@ -265,16 +266,36 @@ const NewsArticleComponent = () => {
   }, []); // Empty dependency array to run only once on component mount
 
  
+  function cleanArticles(articles) {
+    cleaned = []
+    for (i=0; i < articles.length; i++){
+      let article = articles[i];
+      let temp = {};
+      temp[title] = article.title;
+      temp[content] = article.summary;
+      temp[body] = article.body;
+      temp[logo] = article.image;
 
+    
+      /////PROCESSING FOR COMPANIES (MULTIPLE OR SINGLE)
+      temp[companyName] = "TEMP";
+      temp[followStatus] = "TEMP";
+      temp[prediction] = "TEMP";
+
+
+      temp.append(article);
+    }
+    return cleaned;
+  }
   // Function to clean articles, adjust according to your needs
-  const cleanArticles = (articles) => {
+  const mapArticles = (articles) => {
     return articles.map(article => ({
-      logo: article.logo, // Replace with actual data if available
-      companyName: article.companyName, // Replace with actual data if available
-      followStatus: article.followStatus, // Replace with actual data if available
-      title: article.title, // Assuming you have a title
-      content: article.content, // Assuming you have a summary
-      prediction: article.prediction, // Assuming you have prediction data
+      logo: article.logo,
+      companyName: article.companyName, 
+      followStatus: article.followStatus, 
+      title: article.title, 
+      content: article.content, 
+      prediction: article.prediction
     }));
   };
 
