@@ -13,7 +13,7 @@ const NewsArticleComponent = () => {
       const socket = new WebSocket(url);
 
       socket.onmessage = (event) => {
-        const eventType = JSON.parse(event);
+        const eventType = JSON.parse(event.data);
         if (eventType.type === "ARTICLE_RESPONSE" || eventType.type === "ARTICLE_PUSH") {
           const temp = cleanArticles(eventType.articles);
           const cleaned = mapArticles(temp); // Use received articles
@@ -53,23 +53,23 @@ const NewsArticleComponent = () => {
 
  
   function cleanArticles(articles) {
-    cleaned = []
-    for (i=0; i < articles.length; i++){
+    let cleaned = []
+    for (let i=0; i < articles.length; i++){
       let article = articles[i];
       let temp = {};
-      temp[title] = article.title;
-      temp[content] = article.summary;
-      temp[body] = article.body;
-      temp[logo] = article.image;
+      temp["title"] = article.title;
+      temp["content"] = article.summary;
+      temp["body"] = article.body;
+      temp["logo"] = article.image;
 
     
       /////PROCESSING FOR COMPANIES (MULTIPLE OR SINGLE)
-      temp[companyName] = "TEMP";
-      temp[followStatus] = "TEMP";
-      temp[prediction] = "TEMP";
+      temp["companyName"] = "TEMP";
+      temp["followStatus"] = "TEMP";
+      temp["prediction"] = "TEMP";
 
 
-      temp.append(article);
+      cleaned.push(temp);
     }
     return cleaned;
   }

@@ -35,6 +35,10 @@ function Header() {
     navigate('/');
   };
 
+  const navigateToPage = (path) => {
+    navigate(path); // Navigate to the specified path
+  };
+
  
   return (
     <nav className="navbar">
@@ -57,12 +61,11 @@ function Header() {
         </form>
       </div>
       <div className="icons">
-        <div className="notif-bell"><FontAwesomeIcon icon={faBell} color='white' /></div> {/* Replace with an icon */}
         <div className="profile-icon"  onClick={toggleDropdown} ref={dropdownRef}><FontAwesomeIcon icon={faUserCircle} color='white'/></div> 
         {isDropdownVisible && (
              <div className="profile-dropdown">
              <ul>
-               <li>Profile</li>
+               <li><button onClick={() => navigateToPage('/profile')}>Profile</button></li>
                <li className='settings-container'>Settings</li>
                <li>Logout</li>
              </ul>

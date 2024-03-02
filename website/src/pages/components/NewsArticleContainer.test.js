@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, waitFor, act } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import NewsArticleComponent from './NewsArticleContainer';
 import '@testing-library/jest-dom';
 
@@ -75,7 +76,11 @@ global.WebSocket = MockWebSocket;
 
 test('displays articles received from WebSocket', async () => {
   // Render the component
-  const { getByText } = render(<NewsArticleComponent />);
+  const { getByText } = render(
+  <MemoryRouter>
+    <NewsArticleComponent />
+  </MemoryRouter>
+  );
 
   // Define the mock data
   const mockData = {
