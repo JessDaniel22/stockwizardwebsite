@@ -23,8 +23,19 @@ async function sendUserDetails(email, password) {
 
     //Handle connection closed
     socket.addEventListener('close', (event) => {
-        //sends status code of why connection was closed
-        console.log('Server closed connection: ', event.code);                            
+        console.log('Server closed connection: ', event.code);
+
+        //Attempt to reconnect:
+        if (attempts < 5) {
+            setTimeout(() => {
+            console.log('Reconnecting...');
+            connect();
+            attempts++;
+            delay = Math.min(delay * 2, 60000); //Double delay up to one minute
+            }, delay * (1 + 0.3 * Math.random())); //Jitter to avoid synchronised reconnection attempts
+        } else {
+            console.log('Failed to reconnect after 5 attempts.');
+        }
     });
 
     //Output error message
