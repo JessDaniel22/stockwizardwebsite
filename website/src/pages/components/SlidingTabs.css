@@ -1,4 +1,4 @@
-.tabs-container {
+.tabs-container1 {
   font-family: Arial, sans-serif;
   padding: 0 24px;
   margin-top: 150px;
@@ -6,7 +6,7 @@
  
 }
 
-.tabs {
+.tabs1 {
   display: flex;
   overflow-x: auto; /* Allows horizontal scrolling */
   margin-bottom: 20px;

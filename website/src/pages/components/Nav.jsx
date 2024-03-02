@@ -2,10 +2,12 @@ import React, { useState, useEffect, useRef  } from 'react';
 import './nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faChartLine, faCog, faNewspaper, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import {Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 
 function Header() {
+
+  const navigate = useNavigate();
 
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const dropdownRef = useRef(null); // Ref for the dropdown
@@ -28,10 +30,15 @@ function Header() {
     // Cleanup
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isDropdownVisible]);
+
+  const handleClick1 = () => {
+    navigate('/');
+  };
+
  
   return (
     <nav className="navbar">
-      <div className='image-container'></div> 
+      <div className='image-container1' onClick={handleClick1}></div> 
       <div className="search-bar">
       <form
             className='search-form d-flex align-items-center'
@@ -53,15 +60,13 @@ function Header() {
         <div className="notif-bell"><FontAwesomeIcon icon={faBell} color='white' /></div> {/* Replace with an icon */}
         <div className="profile-icon"  onClick={toggleDropdown} ref={dropdownRef}><FontAwesomeIcon icon={faUserCircle} color='white'/></div> 
         {isDropdownVisible && (
-            <div className="profile-dropdown">
-              <ul>
-                <li><Link to="/">Profile</Link></li>
-                <li><Link to="/">Stocks</Link></li>
-                <li><Link to="/">News</Link></li>
-                <li className='settings-container'><Link to="/">Settings</Link></li>
-                <li><Link to="/">Logout</Link></li>
-              </ul>
-            </div>
+             <div className="profile-dropdown">
+             <ul>
+               <li>Profile</li>
+               <li className='settings-container'>Settings</li>
+               <li>Logout</li>
+             </ul>
+           </div>
           )}
       </div>
     </nav>

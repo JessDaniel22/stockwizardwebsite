@@ -13,11 +13,11 @@ function SignUpPage() {
   };
 
   return (
-    <div className="split-page">
+    <div className="split-pageS">
       <div className="image-container">
       </div>
       <div className="register-details">
-        <div className="form-container">
+        <div className="form-containerS">
           <h1>Create an account</h1>
           <label htmlFor="FullName">Full name</label>
           <input
@@ -49,7 +49,7 @@ function SignUpPage() {
           />
           <button onClick={handleRegister} className="register-button">Register</button>
           <p className="login-link">
-            Already have an account? <a href="/signup"> Log in</a>
+            Already have an account? <a href="/login"> Log in</a>
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 
 import React from "react";
 import Nav from "./components/Nav";
-import StocksNews from "./components/StocksNews";
+import StocksNews from "./components/StockNews";
 
 
 function ProfilePage() {

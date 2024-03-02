@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
 import './Cards.css'; // Assuming you've added styling
 
 const Cards = ({ logo, companyName, followStatus, title, content, prediction, date }) => {
   // State to hold the formatted time ago string
   const [timeAgoText, setTimeAgoText] = useState('');
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    const formattedCompanyName = companyName.trim().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+    navigate(`/company/${formattedCompanyName}`); 
+  };
+
 
   // Function to calculate how long ago the card was updated
   const calculateTimeAgo = (date) => {
@@ -38,7 +46,7 @@ const Cards = ({ logo, companyName, followStatus, title, content, prediction, da
   }, [date]);
 
   return (
-    <div className="card">
+    <div className="card" onClick={handleCardClick}>
     <div className='top'>
       <div className="info">
         <span className="logo">{logo}</span>

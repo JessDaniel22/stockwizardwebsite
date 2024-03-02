@@ -1,4 +1,4 @@
-.split-page {
+.split-pageSP {
   display: flex;
   margin-top: 150px;
   margin-left: 18px;
@@ -94,14 +94,14 @@
   line-height: normal;
 }
 
-.form-container {
+.form-containerSP {
   flex-direction: column; /* Stack the login details vertically */
   padding: 20px; /* Add some padding around the login details */
 }
 
 /* Additional styling for inputs and button */
-.form-container input[type="text"],
-.form-container input[type="password"] {
+.form-containerSP input[type="text"],
+.form-containerSP input[type="password"] {
   margin: 15px 0 10px 0; /* Add some vertical margin */
   padding: 20px; /* Add some padding inside the inputs */
   width: calc(100% - 60px); /* Make inputs a bit smaller than their container */
@@ -110,7 +110,7 @@
   background: #E8E8E8;
 }
 
-.form-container button {
+.form-containerSP button {
   margin-left: 12px;
   height: 52px;
   flex-shrink: 0;
@@ -126,7 +126,7 @@
   line-height: normal;
 }
 
-.form-container{
+.form-containerSP{
   margin-left: 50px;
   width: 600px;
   height: 400px;
@@ -227,14 +227,14 @@
   transform: translateX(-100%);
 }
 
-.button-container{
+.button-containerSP{
   display: flex;
   justify-content: end;
   margin-top: 10px;
   margin-right: 15px;
 }
 
-.button-container button{
+.button-containerSP button{
 color: white;
   border: none;
 

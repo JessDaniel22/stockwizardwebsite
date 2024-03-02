@@ -1,4 +1,4 @@
-.split-page {
+.split-page1{
   display: flex;
   height: 100vh; /* Make the container take up the full height of the viewport */
 }
@@ -20,7 +20,7 @@
   
 }
 
-.form-container h1{
+.form-containerL h1{
   font-size: 28px;
   font-weight: 500;
   color: #06132C;
@@ -28,7 +28,7 @@
 
 }
 
-.form-container label{
+.form-containerL label{
   font-size: 15px;
   font-weight: 200;
   color: #06132C;
@@ -44,7 +44,7 @@
 .login-details input[type="password"] {
   margin: 15px 0 30px 0; /* Add some vertical margin */
   padding: 20px; /* Add some padding inside the inputs */
-  width: calc(100% - 60px); /* Make inputs a bit smaller than their container */
+  width: calc(100% - 10px); /* Make inputs a bit smaller than their container */
   border-radius: 32px;
   border: none;
   background: #E8E8E8;
@@ -66,9 +66,9 @@
   line-height: normal;
 }
 
-.form-container{
+.form-containerL{
   width: 400px;
-  height: 400px;
+  height: 500px;
   padding: 32px;
   border-radius: 30px;
   background-color: #F7F7F7;

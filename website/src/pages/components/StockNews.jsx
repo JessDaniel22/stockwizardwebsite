@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './StocksNews.css';
+import './StockNews.css';
 import NewsArticleComponent from './NewsArticleContainer';
 import Table from './Table';
 

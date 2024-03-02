@@ -63,9 +63,12 @@ const Table = () => {
     })
     setRecords(newData);
   }
+
+  const customStyles = {}; // complete 
+
   return (
     <div className="main-page">
-    <div className="container">
+    <div className="container" style={{padding: "50px 10%"}}>
         <div className="search"><input type="text" onChange={handleFilter}/> </div>
         <DataTable
         className="table"
@@ -73,6 +76,7 @@ const Table = () => {
         data={records}
         fixedHeader
         psgination
+        customStyles={customStyles}
         ></DataTable>
     </div>
     <div className="title">Based on your watchlist</div>

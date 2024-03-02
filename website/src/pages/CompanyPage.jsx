@@ -6,12 +6,13 @@ import "bootstrap/dist/js/bootstrap.min.js";
 
 import "./CompanyPage.css";
 import React from "react";
-import Nav from "./pages/components/Nav";
-import CompanyHeader from "./pages/components/CompanyHeader";
-
-
+import Nav from "./components/Nav";
+import CompanyHeader from "./components/CompanyHeader";
+import { useParams } from 'react-router-dom';
+import NewsArticleComponent from "./components/NewsArticleContainer";
 
 function CompanyPage() {
+  let { companyId } = useParams();
   return (
     <div className="App">
     <Nav/>
@@ -22,12 +23,13 @@ function CompanyPage() {
           
         </div>
         <div className="news-container">
+          <NewsArticleComponent />
           </div>
       </div>
 
       <div className="company-info">
         <div className="info-container">
-          <header>APPLE INC.</header>
+          <header>{companyId}</header>
           <p>Company Information</p>
         </div>
       </div>

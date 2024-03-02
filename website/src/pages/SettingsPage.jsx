@@ -33,7 +33,7 @@ function SettingsPage() {
 
   return (
     
-    <div className="split-page">
+    <div className="split-pageSP">
       <Nav/>
     <div className="left">
       <h1>Edit Profile</h1>
@@ -71,9 +71,9 @@ function SettingsPage() {
     </div>
     <div className="right">
     <h1>Change Password</h1>
-    <div className="login-details">
+    <div className="login-detailsSP">
     
-      <div className="form-container">
+      <div className="form-containerSP">
         <label htmlFor="currentPassword">Current password</label>
         <input
           type="password"
@@ -105,7 +105,7 @@ function SettingsPage() {
     <input type="checkbox" id="switch"  checked={notificationsEnabled} onChange={handleNotificationToggle} /><label htmlFor="switch">Toggle Notifications</label>
   </div>
       </div>
-      <div className="button-container">
+      <div className="button-containerSP">
         <button onClick={handleSave} className="save-button">Save Changes</button>
         </div>
       </div>

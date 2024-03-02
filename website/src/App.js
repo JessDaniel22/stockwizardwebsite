@@ -18,52 +18,47 @@ import "bootstrap/dist/js/bootstrap.min.js";
 
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SlidingTabs from "./pages/components/SlidingTabs";
-import NewsArticleComponent from "./pages/components/NewsArticleContainer";
-import Nav from "./pages/components/Nav";
+// import HomePage from './pages/HomePage';
+import Nav from './pages/components/Nav';
+import SlidingTabs from './pages/components/SlidingTabs';
+import NewsArticleComponent from './pages/components/NewsArticleContainer';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import SettingsPage from './pages/SettingsPage';
+import ProfilePage from './pages/ProfilePage';
+import CompanyPage from './pages/CompanyPage';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './pages/components/ProtectedRoute';
 
-
-const HomePage = () => {
+function HomePage() {
   return (
     <div className="App">
     <Nav/>
     <SlidingTabs />
-    <NewsArticleComponent />
+    <NewsArticleComponent/>
   </div>
   );
 }
 
 const App = () => {
   return (
-    <Router>
+    <AuthProvider>
+      <div>
       <Routes>
+      {/* <Route path="/" element={<ProtectedRoute><HomePage/></ProtectedRoute>}/> */}
       <Route path="/" element={<HomePage/>}/>
+      <Route path="/login" element={<LoginPage/>}/>
+      <Route path="/signup" element={<SignUpPage/>}/>
+      <Route path="/settings" element={<SettingsPage/>}/>
+      <Route path="/profile" element={<ProfilePage/>}/>
+      <Route path="/company/:companyId" element={<CompanyPage/>}/>
       </Routes>
      
-    </Router>
+    </div>
+    </AuthProvider>
+    
     
   );
 }
 
 export default App;
-
-
-
-
-// const App = () => {
-//   return (
-//     <div className='main'>
-//     <Router>
-//       <Routes>
-//         <Route exact path="/" element={<HomePage/>}/>
-//         <Route path="/login" element={<LoginPage/>}/>
-//         <Route path="/signup" element={<SignUpPage/>}/>
-//         <Route path="/settings" element={<SettingsPage/>}/>
-//         <Route path="/profile" element={<ProfilePage/>}/>
-//       </Routes>
-//     </Router>
-//     </div>
-//   );
-// }
-
-// export default App;
