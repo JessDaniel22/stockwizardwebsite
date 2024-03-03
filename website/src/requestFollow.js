@@ -40,4 +40,6 @@ async function requestFollow(ticker) {
             console.log('WebSocket error: ', event);
         });
     }
+    connect();
+
 }

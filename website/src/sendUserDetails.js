@@ -20,7 +20,7 @@ async function sendUserDetails(email, password) {
 
         socket.onmessage = (event) => {
             const eventData = JSON.parse(event);
-            if (eventData.type == "LOGIN_RESPONSE") {
+            if (eventData.type === "LOGIN_RESPONSE") {
                 localStorage.setItem('user', eventData.token)
             }
         };
@@ -47,5 +47,6 @@ async function sendUserDetails(email, password) {
             console.log('WebSocket error: ', event);
         });
     }
+    connect();
 }
 

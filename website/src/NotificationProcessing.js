@@ -9,7 +9,7 @@ async function notifications() {
 
     socket.onmessage = (event) => {
       const eventType = JSON.parse(event);
-      if (eventType.type == "NOTIFICATION_PUSH") {
+      if (eventType.type === "NOTIFICATION_PUSH") {
         notificationProcessing(eventType.data);  
       }
     };

@@ -8,7 +8,7 @@ async function getCompanyData() {
   
       socket.onmessage = (event) => {
         const eventData = JSON.parse(event);
-        if (eventData.type == "COMPANY_RESPONSE") {
+        if (eventData.type === "COMPANY_RESPONSE") {
           companyProcessing(event.COMPANYINFO);  
         }
       };

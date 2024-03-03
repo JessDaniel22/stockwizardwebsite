@@ -40,5 +40,7 @@ async function requestCompanyDetails(ticker) {
           console.log('WebSocket error: ', event);
       });
     }
+    connect();
+
 }
 

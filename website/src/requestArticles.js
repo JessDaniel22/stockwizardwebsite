@@ -45,5 +45,7 @@ async function requestArticles(start_time, end_time, use_following_companies, co
           console.log('WebSocket error: ', event);
       });
   }
+  connect();
+
 }
 
