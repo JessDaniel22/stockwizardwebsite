@@ -2,6 +2,8 @@ async function requestCompanyDetails(ticker) {
     const url = 'wss://cs261se.containers.uwcs.co.uk'; 
     const details = {"type": "COMPANY_REQUEST", "ticker":ticker}; 
     const socket = new WebSocket(url);
+    let attempts = 0;
+    let delay = 1000;
 
     //Open connection to web socket
     socket.addEventListener('open', (event) => {

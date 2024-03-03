@@ -2,6 +2,8 @@ async function requestFollow(ticker) {
     const url = 'wss://cs261se.containers.uwcs.co.uk'; 
     const details = {"type": "FOLLOW_REQUEST", "data": {"company": ticker}, "timestamp": Null}; 
     const socket = new WebSocket(url);
+    let attempts = 0;
+    let delay = 1000;
 
     //Open connection to web socket
     socket.addEventListener('open', (event) => {

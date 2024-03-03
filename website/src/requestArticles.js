@@ -7,6 +7,8 @@ async function requestArticles(start_time, end_time, use_following_companies, co
       "companies": companies
     }, "timestamp": null};  //////////////////TO DO
     const socket = new WebSocket(url);
+    let attempts = 0;
+    let delay = 1000;
 
     //Open connection to web socket
     socket.addEventListener('open', (event) => {
