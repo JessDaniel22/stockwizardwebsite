@@ -1,6 +1,11 @@
-async function requestArticles(details) {
+async function requestArticles(start_time, end_time, use_following_companies, companies) {
     const url = 'wss://cs261se.containers.uwcs.co.uk'; 
-    const details = {"type": "ARTICLES_REQUEST"};  //////////////////TO DO
+    const details = {"type": "ARTICLES_REQUEST", "data": {
+      "start_time": start_time,
+      "end_time": end_time,
+      "use_following_companies": use_following_companies,
+      "companies": companies
+    }, "timestamp": null};  //////////////////TO DO
     const socket = new WebSocket(url);
 
     //Open connection to web socket
