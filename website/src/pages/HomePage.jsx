@@ -15,7 +15,7 @@ function HomePage() {
     <div className="App">
     <Nav/>
     <SlidingTabs />
-    <NewsArticleComponent/>
+    <NewsArticleComponent />
   </div>
   );
 }

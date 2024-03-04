@@ -1,13 +1,3 @@
-// import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-
-// import LoginPage from '../src/pages/LoginPage';
-// import SignUpPage from '../src/pages/SignUpPage';
-// import SettingsPage from '../src/pages/SettingsPage';
-// import ProfilePage from '../src/pages/ProfilePage';
-
-// import SlidingTabs from "./pages/components/SlidingTabs";
-// import NewsArticleComponent from "./pages/components/NewsArticleContainer";
-// import Nav from "./pages/components/Nav";
 import './App.css';
 
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -27,23 +17,16 @@ import SignUpPage from './pages/SignUpPage';
 import SettingsPage from './pages/SettingsPage';
 import ProfilePage from './pages/ProfilePage';
 import CompanyPage from './pages/CompanyPage';
+import HomePage from './pages/HomePage';
 import { AuthProvider } from './context/AuthContext';
+import { CompaniesProvider } from './api/CompaniesContext';
 import ProtectedRoute from './pages/components/ProtectedRoute';
 
-function HomePage() {
-  return (
-    <div className="App">
-    <Nav/>
-    <SlidingTabs />
-    <NewsArticleComponent/>
-  </div>
-  );
-}
 
 const App = () => {
   return (
-    
-     <Router>
+    <CompaniesProvider>
+     <AuthProvider>
       <Routes>
       {/* <Route path="/" element={<ProtectedRoute><HomePage/></ProtectedRoute>}/> */}
       <Route path="/" element={<HomePage/>}/>
@@ -51,9 +34,10 @@ const App = () => {
       <Route path="/signup" element={<SignUpPage/>}/>
       <Route path="/settings" element={<SettingsPage/>}/>
       <Route path="/profile" element={<ProfilePage/>}/>
-      <Route path="/company/:name" element={<CompanyPage/>}/>
+      <Route path="/company/:companyId" element={<CompanyPage/>}/>
       </Routes>
-     </Router>
+     </AuthProvider>
+     </CompaniesProvider>
       
   );
 }
