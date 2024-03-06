@@ -20,7 +20,8 @@ const Cards = ({ articleData}) => {
 
   return (
     <div className="article-card">
-      <h2 onClick={handleArticleClick(articleData.url)} style={{ cursor: 'pointer' }}>{articleData.title}
+      <h2 style={{ cursor: 'pointer' }}>
+        <span>{articleData.title}</span>
       {articleData.timepublished ? (
         <span className="time-published" >
           {new Date(articleData.timepublished).toLocaleDateString()}

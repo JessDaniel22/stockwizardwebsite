@@ -31,15 +31,18 @@ h3{
   font-size: 20px;
 }
 
+
 .button{
   background-color: #06132C; /* Green */
   border: none;
   color: white;
-  padding: 4px;
+  padding: 8px;
   text-align: center;
   text-decoration: none;
+  width: 90px;
+  border-radius: 20px;
   font-size: 15px;
-  margin: 4px 2px;
+  margin: 4px 8px;
   cursor: pointer;
   border-radius: 4px;
 margin-left: 20px;
@@ -74,5 +77,6 @@ h2{
 
 .time-published{
   display: flex;
-  flex: flex-end;
+  justify-content: space-between;
+  font-size: 15px;
 }
