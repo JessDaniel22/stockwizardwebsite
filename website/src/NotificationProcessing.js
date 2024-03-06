@@ -8,9 +8,9 @@ async function notifications() {
 
 
     socket.onmessage = (event) => {
-      const eventType = JSON.parse(event);
-      if (eventType.type === "NOTIFICATION_PUSH") {
-        notificationProcessing(eventType.data);  
+      const eventData = JSON.parse(event);
+      if (eventData.type === "NOTIFICATION_PUSH") {
+        notificationProcessing(eventData.data);  
       }
     };
 
@@ -43,7 +43,34 @@ async function notifications() {
 
   connect(); //Initial connection
 
+
+  
   function notificationProcessing(notificationData) {
-    // TO DO
-  }
+   // Check if the browser supports notifications
+    if ('Notification' in window) {
+      // Request permission (if not already granted)
+      Notification.requestPermission().then((permission) => {
+          if (permission === 'granted') {
+              // Create a notification
+              const notification = new Notification('Hello', {
+                title: notificationData.title,
+                body: notificationData.body
+              });
+
+              // Show the notification
+              notification.show();
+              setTimeout(() => notification.close(), 10*1000);  //Displays notification for 10s
+              
+          } else {
+              console.log('Notifications are not allowed by the user.');
+          }
+      });
+    } else {
+      console.log('Notifications are not supported in this browser.');
+    }
+
+  };
+  
+  
 }
+
