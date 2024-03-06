@@ -19,7 +19,7 @@ const NewsArticleComponent = ({companyId}) => {
         id: 1,
         name: "TechCorp",
         prediction: "The prediction is a score since..",
-        score: 0.75,
+        score: 0,
       },
       {
         id: 2,
@@ -125,13 +125,13 @@ const NewsArticleComponent = ({companyId}) => {
   //     temp["companies"] = tempCompanies; 
   //     cleaned.push(temp);
   //   }
-    return cleaned.map(article => ({
-      title: article.title,
-      summary: article.summary,
-      url: article.url,
-      timepublished: moment(article.timepublished).format("Do MMMM, YYYY"),
-      companies: article.companies
-  }));
+  //   return cleaned.map(article => ({
+  //     title: article.title,
+  //     summary: article.summary,
+  //     url: article.url,
+  //     timepublished: moment(article.timepublished).format("Do MMMM, YYYY"),
+  //     companies: article.companies
+  // }));
   // }
 
 

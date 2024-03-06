@@ -43,7 +43,7 @@ const Cards = ({ articleData}) => {
                   ) : articleCompany.score < 0 ? (
                     <span style={{ color: 'red' }}>↓</span>
                   ) : (
-                    ''
+                    <span style={{ color: 'gray' }}>-</span>
                   )}
                 </h3>
                 <p className="company-score-date">

@@ -9,6 +9,7 @@ import Nav from "./components/Nav";
 import StocksNews from "./components/StockNews";
 
 
+
 function ProfilePage() {
   return (
     <div className="App">

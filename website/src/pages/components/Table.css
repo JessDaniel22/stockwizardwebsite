@@ -1,0 +1,76 @@
+.table-container1 table td, .table-container1 table th,
+.table-container2 table td, .table-container2 table th {
+  padding: 8px; 
+  font-size: 14px;
+}
+
+    .table-container1, .table-container2 {
+        margin-bottom: 40px; 
+      }
+      
+
+      .main-page > :last-child {
+        margin-bottom: 0;
+      }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  h2{
+    margin-bottom: 20px;
+    font-size: 15px;
+   text-decoration: underline;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center; 
+    gap: 8px; 
+    margin-top: 20px;
+    padding: 0;
+    list-style-type: none; 
+  }
+  
+
+  .pagination a, .pagination button {
+    text-decoration: none; 
+    color: white; 
+    background-color: #06132C; 
+    border: #06132C;
+    padding: 5px 10px; 
+    border-radius: 5px; 
+  
+
+    transition: background-color 0.3s ease; 
+  }
+  
+  .pagination a:hover, .pagination button:hover {
+    background-color: #113372; 
+    cursor: pointer; 
+  }
+
+  .pagination-controls {
+    display: flex;
+    flex-direction: column; 
+    margin-left: auto;
+
+  }
+
+  .page-indicator{
+    font-size: 12px;
+    margin-left: auto;
+    margin-top: 5px;
+  }
+
+  th,td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }

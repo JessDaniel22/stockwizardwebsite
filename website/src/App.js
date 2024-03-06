@@ -1,3 +1,4 @@
+import React, {useState, useEffect}from "react";
 import './App.css';
 
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -6,7 +7,7 @@ import "remixicon/fonts/remixicon.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
-import React from "react";
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import HomePage from './pages/HomePage';
 import Nav from './pages/components/Nav';
@@ -23,7 +24,10 @@ import { CompaniesProvider } from './api/CompaniesContext';
 import ProtectedRoute from './pages/components/ProtectedRoute';
 
 
+
+
 const App = () => {
+
   return (
     <CompaniesProvider>
      <AuthProvider>
