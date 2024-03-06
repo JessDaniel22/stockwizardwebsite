@@ -19,6 +19,21 @@ const CompanyPage = () => {
   const company = companies.find((company) => company.id === parsedCompanyId);
 
   const isFollowing = company ? company.isFollowing : false;
+
+  const companyData = getCompanyData().then(data => {
+    console.log(data); // This will log the data you need
+  }).catch(error => {
+    console.error('An error occurred:', error);
+  });
+
+  let graphData = companyData.graph_data;
+  let dates = Object.keys(graphData);
+  let vals = [];
+  for (let i=0; i < dates.length; i++) {
+    vals.push(graphData.dates[i]);
+  }
+
+
   return (
     <div className="App">
     <Nav/>
@@ -32,7 +47,7 @@ const CompanyPage = () => {
       </button>
     </div>
         <div className="graph-container">
-          
+          <LineChart labels={dates} data={vals} companyName={companyData.company_name}/>
         </div>
         <div className="news-container">
           <NewsArticleComponent companyId={parsedCompanyId} />
