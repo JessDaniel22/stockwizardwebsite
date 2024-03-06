@@ -116,6 +116,7 @@ const NewsArticleComponent = ({companyId}) => {
   //           tempCompany["company_name"] = data.companies[i].company_name;
   //         }
   //       }
+  //       tempCompany["id"] = t;
   //       tempCompany["sentiment_score"] = article.ticker_info.sentiment_score;
   //       tempCompany["prediction"] = article.ticker_info.prediction_string;
   //       tempCompanies.push(tempCompany);
@@ -124,7 +125,13 @@ const NewsArticleComponent = ({companyId}) => {
   //     temp["companies"] = tempCompanies; 
   //     cleaned.push(temp);
   //   }
-  //   return cleaned;
+    return cleaned.map(article => ({
+      title: article.title,
+      summary: article.summary,
+      url: article.url,
+      timepublished: moment(article.timepublished).format("Do MMMM, YYYY"),
+      companies: article.companies
+  }));
   // }
 
 
