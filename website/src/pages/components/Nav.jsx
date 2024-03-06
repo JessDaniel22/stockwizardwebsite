@@ -6,37 +6,49 @@ import {useNavigate} from 'react-router-dom';
 
 
 function Header() {
-  const [input, setInput] = useState(''); // State to hold the input value
-  const [data, setData] = useState(null);
 
-  const API_KEY = 'demo';
+//DATA NEEDED HEREEEEEEEE!!!!!!!!!!!!!!!!
 
-  const fetchData = async (value) => {
-    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${value}&interval=5min&apikey=${API_KEY}`;
-    try {
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'User-Agent': 'request',
-        },
-      });
-      if (!response.ok) {
-        throw new Error(`Error! status: ${response.status}`);
-      }
-      const result = await response.json();
-      console.log(result); // For debugging
-      setData(result); // Save the data to state
-    } catch (error) {
-      console.log('Error fetching data: ', error);
-    }
 
-  };
+  // const [input, setInput] = useState(''); // State to hold the input value
+  // const [data, setData] = useState(null);
 
-  const handleChange = (value) => {
-    value.preventDefault(); // Prevent the form from reloading the page
-    setInput(value);
-    fetchData(value); // Fetch data with the current input value
-  };
+  // const API_KEY = 'demo';
+
+  // const fetchData = async (value) => {
+  //   const url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${value}&interval=5min&apikey=${API_KEY}`;
+  //   try {
+  //     const response = await fetch(url, {
+  //       method: 'GET',
+  //       headers: {
+  //         'User-Agent': 'request',
+  //       },
+  //     });
+  //     if (!response.ok) {
+  //       throw new Error(`Error! status: ${response.status}`);
+  //     }
+  //     const result = await response.json();
+  //     console.log(result); // For debugging
+  //     setData(result); // Save the data to state
+  //   } catch (error) {
+  //     console.log('Error fetching data: ', error);
+  //   }
+
+  // };
+
+  // const fetchData = (value) => {
+  //   fetch('https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=equity&apikey=7YFZ9O7RFHZXQGV2')
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       console.log(json);
+  //     });
+      
+  // };
+
+  // const handleChange = (value) => {
+  //   setInput(value);
+  //   fetchData(value);
+  // };
 
   const navigate = useNavigate();
 
@@ -86,8 +98,8 @@ function Header() {
                 name='query'
                 placeholder='Search'
                 title='Enter search keyboard' 
-                value={input}
-                onChange={(e) => handleChange(e.target.value)}
+                // value={input}
+                // onChange={(e) => handleChange(e.target.value)}
             />    
         </form>
       </div>
