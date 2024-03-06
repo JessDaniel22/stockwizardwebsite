@@ -52,7 +52,7 @@ async function notifications() {
       Notification.requestPermission().then((permission) => {
           if (permission === 'granted') {
               // Create a notification
-              const notification = new Notification('Hello', {
+              const notification = new Notification({
                 title: notificationData.title,
                 body: notificationData.body
               });

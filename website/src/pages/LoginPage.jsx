@@ -29,7 +29,7 @@ function LoginPage() {
       <div className="image-container">
       </div>
       <div className="login-details">
-        <div className="form-containerL">
+        <div className="form-container">
           <h1>Welcome back,</h1>
           <label htmlFor="emailAddress">Email address</label>
           <input
