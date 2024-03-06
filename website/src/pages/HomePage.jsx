@@ -9,6 +9,13 @@ import SlidingTabs from "./components/SlidingTabs";
 import NewsArticleComponent from "./components/NewsArticleContainer";
 import Nav from "./components/Nav";
 
+const companyDataRecs = getCompanyRecs().then(data => {  //Data for company recommendations
+  console.log(data); 
+}).catch(error => {
+  console.error('An error occurred:', error);
+});
+
+
 
 function HomePage() {
   return (

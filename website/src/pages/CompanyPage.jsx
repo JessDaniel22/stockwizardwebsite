@@ -21,7 +21,7 @@ const CompanyPage = () => {
   const isFollowing = company ? company.isFollowing : false;
 
   const companyData = getCompanyData().then(data => {
-    console.log(data); // This will log the data you need
+    console.log(data); 
   }).catch(error => {
     console.error('An error occurred:', error);
   });
