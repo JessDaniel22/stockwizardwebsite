@@ -68,9 +68,6 @@ async function notifications() {
     } else {
       console.log('Notifications are not supported in this browser.');
     }
-
   };
-  
-  
 }
 
