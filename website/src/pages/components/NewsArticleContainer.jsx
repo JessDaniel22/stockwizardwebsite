@@ -12,6 +12,8 @@ const NewsArticleComponent = ({companyId}) => {
     title: "Tech Industry Trends",
     summary:
       "An overview of the latest trends in the tech industry, including AI advancements and blockchain technology.",
+      url: "https://www.technews.com",
+      timepublished: "2021-10-01",
     companies: [
       {
         id: 1,
@@ -158,5 +160,5 @@ const NewsArticleComponent = ({companyId}) => {
     </div>
   );
 };
-
+}
 export default NewsArticleComponent;

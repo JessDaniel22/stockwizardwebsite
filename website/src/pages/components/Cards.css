@@ -1,108 +1,78 @@
-.card {
+.companies-list {
+  display: flex;
+  flex-direction: column; /* Changed from flex-wrap */
+  align-items: flex-start;
+}
+
+/* Styling for the container that wraps individual company information */
+.company-info-container {
   border-radius: 15px;
   background: #EEE;
   border: 1px solid #C8C8C8;
-  border: none;
-  padding: 30px;
-  margin: 0px 250px 30px 250px;
-  height: 250px;
-  position: relative;
+  padding: 5px; /* Slightly reduced padding */
+  margin: 5px 0; /* Slightly reduced margin */
+  width: 100%; /* Adjust width to make the container thinner */
+
 }
 
-.time-ago {
-  font-size: 0.8rem; /* Smaller font size for the timing info */
-  color: #666; /* Lighter text color */
-  margin-top: 10px; /* Space above the timing info */
-}
-
-.top{
-  display: flex;
-  align-items: center; /* Vertically aligns children */
-  
-}
-
-.card .top .logo,
-.card .top .company-name,
-.card .top .follow-status {
-margin-right: 8px; /* Adjust the space as needed */
-}
-
-.card .top .follow-status {
-font-style: italic;
-}
-
-.card .date {
-margin-top: 4px;  
-}
-
-.top {
+/* Flex layout for the header containing the company name, score, and date */
+.company-header {
   display: flex;
   justify-content: space-between;
+  gap: 10px; /* More space between company name and follow button */
   align-items: center;
 }
-
-.info .logo,
-.info .company-name,
-.info .follow-status {
-  margin-right: 8px; /* Adjust the space as needed */
-}
-
-.info .follow-status {
-  font-style: italic;
-}
-
-.title{
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+ 
+h3{
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.content{
+  justify-content: space-between;
+  gap: 10px;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 20px;
 }
 
-.date{
-  display: flex;
-  align-items: center;
-  justify-self: right ;
-}
-
-
-.card-tooltip {
-  display: none; /* Hide by default */
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px); /* Adjust as necessary */
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+.button{
+  background-color: #06132C; /* Green */
+  border: none;
+  color: white;
+  padding: 4px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
   border-radius: 4px;
-  padding: 10px;
-  z-index: 1; /* Ensure it's above other content */
+margin-left: 20px;
 }
 
-.card-tooltip::before {
-  content: "";
-  position: absolute;
-  top: -5px; /* Adjust the position of the triangle */
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent #f9f9f9 transparent;
+h2{
+  font-size: 25px;
 }
 
-.card:hover .card-tooltip {
-  display: block; /* Show the tooltip on hover */
+.summary{
+  font-size: 12px;
+}
+
+.company-score-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto; /* Push it to the right */
+  gap: 10px; /* More space between follow button and date */
+
+}
+
+.article-card {
+  /* Dynamic height based on content */
+  padding: 15px; /* Slightly reduced padding */
+  margin: 20px ;
+  border: 1px solid #C8C8C8;
+  border-radius: 15px;
+  background: #FFF;
+
+}
+
+.time-published{
+  display: flex;
+  flex: flex-end;
 }
