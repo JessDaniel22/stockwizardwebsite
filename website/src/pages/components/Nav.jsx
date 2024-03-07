@@ -8,7 +8,7 @@ import SearchResultsList from './SearchResultsList';
 
 const Header = ()  => {
 
-//DATA NEEDED HEREEEEEEEE!!!!!!!!!!!!!!!!
+//fetching from json server!!!!
 
 
   const [input, setInput] = useState(''); 
