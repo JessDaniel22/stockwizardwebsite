@@ -3,52 +3,39 @@ import './nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faChartLine, faCog, faNewspaper, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import {useNavigate} from 'react-router-dom';
+import SearchResultsList from './SearchResultsList';
 
 
-function Header() {
+const Header = ()  => {
 
 //DATA NEEDED HEREEEEEEEE!!!!!!!!!!!!!!!!
 
 
-  // const [input, setInput] = useState(''); // State to hold the input value
-  // const [data, setData] = useState(null);
+  const [input, setInput] = useState(''); 
+  const [results, setResults] = useState([]);
 
-  // const API_KEY = 'demo';
-
-  // const fetchData = async (value) => {
-  //   const url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${value}&interval=5min&apikey=${API_KEY}`;
-  //   try {
-  //     const response = await fetch(url, {
-  //       method: 'GET',
-  //       headers: {
-  //         'User-Agent': 'request',
-  //       },
-  //     });
-  //     if (!response.ok) {
-  //       throw new Error(`Error! status: ${response.status}`);
-  //     }
-  //     const result = await response.json();
-  //     console.log(result); // For debugging
-  //     setData(result); // Save the data to state
-  //   } catch (error) {
-  //     console.log('Error fetching data: ', error);
-  //   }
-
-  // };
-
-  // const fetchData = (value) => {
-  //   fetch('https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=equity&apikey=7YFZ9O7RFHZXQGV2')
-  //     .then((response) => response.json())
-  //     .then((json) => {
-  //       console.log(json);
-  //     });
+  const fetchData = (value) => {
+    fetch('')
+      .then((response) => response.json())
+      .then((json) => {
+        const results = json.filter((user) => {
+          return (
+            value &&
+            user &&
+            user.name &&
+            user.name.toLowerCase().includes(value) &&
+            user.symbol
+          );
+        });
+        setResults(results);
+      });
       
-  // };
+  };
 
-  // const handleChange = (value) => {
-  //   setInput(value);
-  //   fetchData(value);
-  // };
+  const handleChange = (value) => {
+    setInput(value);
+    fetchData(value);
+  };
 
   const navigate = useNavigate();
 
@@ -98,10 +85,11 @@ function Header() {
                 name='query'
                 placeholder='Search'
                 title='Enter search keyboard' 
-                // value={input}
-                // onChange={(e) => handleChange(e.target.value)}
+                value={input}
+                onChange={(e) => handleChange(e.target.value)}
             />    
         </form>
+        {results && results.length > 0 && <SearchResultsList results={results} />}
       </div>
       <div className="icons">
         <div className="profile-icon"  onClick={toggleDropdown} ref={dropdownRef}><FontAwesomeIcon icon={faUserCircle} color='white'/></div> 
