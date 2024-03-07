@@ -34,7 +34,7 @@ function SettingsPage() {
   return (
     
     <div className="split-pageSP">
-      <Nav/>
+      {/* <Nav/> */}
     <div className="left">
       <h1>Edit Profile</h1>
       <div className="form-container1">

@@ -15,7 +15,7 @@ import Nav from "./components/Nav";
 function HomePage() {
   return (
     <div className="App">
-    <Nav/>
+    {/* <Nav/> */}
     <SlidingTabs />
     <NewsArticleComponent />
   </div>

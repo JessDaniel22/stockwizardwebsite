@@ -45,7 +45,7 @@ const CompanyPage = () => {
 
   return (
     <div className="App">
-    <Nav/>
+    {/* <Nav/> */}
     <div className="split-page">
       <div className="data-container">
       <div className="company-header">

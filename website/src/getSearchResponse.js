@@ -51,8 +51,9 @@ async function getSearchResponse(inputText) {
       
       function sortData(data) {
         // WHAT DATA NEEDED HERE?
-        sortedData = [];
-        return sortedData
+        // sortedData = [];
+        // return sortedData
+        return data
       }
   
     });

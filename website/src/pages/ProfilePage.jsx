@@ -13,7 +13,7 @@ import StocksNews from "./components/StockNews";
 function ProfilePage() {
   return (
     <div className="App">
-      <Nav />
+      {/* <Nav /> */}
     <StocksNews />
   </div>
   );

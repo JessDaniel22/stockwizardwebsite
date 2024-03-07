@@ -11,7 +11,7 @@ async function getCompanyRecs() {
         socket.onmessage = (event) => {
           const eventData = JSON.parse(event);
           if (eventData.type === "COMPANY_LIST_RESPONSE") { 
-            resolve(extractCompanies(eventData.data.companies)); // Resolve the Promise with the data
+            resolve(eventData.data.companies); // Resolve the Promise with the data
           }
         };
   
