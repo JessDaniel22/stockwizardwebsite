@@ -1,4 +1,4 @@
-async function getSearchResponse() {
+async function getSearchResponse(inputText) {
     const url = 'wss://cs261se.containers.uwcs.co.uk';
     const details = {"type": "SEARCH_REQUEST", "data": {
       "text" : inputText
