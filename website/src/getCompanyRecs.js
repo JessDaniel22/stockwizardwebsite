@@ -1,5 +1,6 @@
 async function getCompanyRecs() {
     const url = 'wss://cs261se.containers.uwcs.co.uk';
+    const details = {"type": "COMPANY_LIST_REQUEST"}; 
     let attempts = 0;
     let delay = 1000;
   
@@ -18,6 +19,7 @@ async function getCompanyRecs() {
           console.log('Connection opened');
           attempts = 0; //Reset reconnect attempts
           delay = 1000; //Reset delay to 1s
+          socket.send(JSON.stringify(details));
         });
   
         socket.addEventListener('close', (event) => {
