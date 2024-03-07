@@ -8,6 +8,11 @@ import "./CompanyPage.css";
 import React from "react";
 import Nav from "./components/Nav";
 import CompanyHeader from "./components/CompanyHeader";
+import Table from "./components/Table";
+import LineChart from "./components/lineChart";
+import { getCompanyData } from "../getCompanyData"
+
+
 import { useParams } from 'react-router-dom';
 import NewsArticleComponent from "./components/NewsArticleContainer";
 import { useCompanies } from "../api/CompaniesContext";
@@ -20,18 +25,22 @@ const CompanyPage = () => {
 
   const isFollowing = company ? company.isFollowing : false;
 
-  // const companyData = getCompanyData().then(data => {
-  //   console.log(data); 
-  // }).catch(error => {
-  //   console.error('An error occurred:', error);
-  // });
+  const companyData = getCompanyData().then(data => {
+    console.log(data); 
+  }).catch(error => {
+    console.error('An error occurred:', error);
+  });
 
-  // let graphData = companyData.graph_data;
-  // let dates = Object.keys(graphData);
-  // let vals = [];
-  // for (let i=0; i < dates.length; i++) {
-  //   vals.push(graphData.dates[i]);
-  // }
+  let temp = companyData.companies;
+  let tableData = Object.values(temp);
+
+
+  let graphData = companyData.graph_data;
+  let dates = Object.keys(graphData);
+  let vals = [];
+  for (let i=0; i < dates.length; i++) {
+    vals.push(graphData.dates[i]);
+  }
 
 
   return (
@@ -47,7 +56,7 @@ const CompanyPage = () => {
       </button>
     </div>
         <div className="graph-container">
-          {/* <LineChart labels={dates} data={vals} companyName={companyData.company_name}/> */}
+          <LineChart labels={dates} data={vals} companyName={companyData.company_name}/>
         </div>
         <div className="news-container">
           <NewsArticleComponent companyId={parsedCompanyId} />
@@ -57,7 +66,9 @@ const CompanyPage = () => {
       <div className="company-info">
         <div className="info-container">
           <header>{company.name}</header>
+          
           <p>Company Information</p>
+          <Table data={tableData} />
         </div>
       </div>
     </div>
