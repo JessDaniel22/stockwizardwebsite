@@ -1,5 +1,8 @@
 async function getSearchResponse() {
     const url = 'wss://cs261se.containers.uwcs.co.uk';
+    const details = {"type": "SEARCH_REQUEST", "data": {
+      "text" : inputText
+    }, "timestamp": null}; 
     let attempts = 0;
     let delay = 1000;
   
@@ -10,7 +13,7 @@ async function getSearchResponse() {
         socket.onmessage = (event) => {
           const eventData = JSON.parse(event);
           if (eventData.type === "SEARCH_RESPONSE") { 
-            sortedData = sortData(eventData.data);
+            let sortedData = sortData(eventData.data);
             resolve(sortedData); // Resolve the Promise with the data
           }
         };
@@ -19,6 +22,7 @@ async function getSearchResponse() {
           console.log('Connection opened');
           attempts = 0; //Reset reconnect attempts
           delay = 1000; //Reset delay to 1s
+          socket.send(JSON.stringify(details));
         });
   
         socket.addEventListener('close', (event) => {
