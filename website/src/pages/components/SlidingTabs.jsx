@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SlidingTabs.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
@@ -7,15 +7,16 @@ import { getCompanyRecs } from "../../getCompanyRecs"
 
 const SlidingTabs = () => {
   const [activeTab, setActiveTab] = useState();
+  const [companyDataRecs, setCompanyDataRecs] = useState([]);
   const navigate = useNavigate();
 
-
-  const companyDataRecs = getCompanyRecs().then(data => {  //Data for company recommendations
-    console.log(data); 
-  }).catch(error => {
-    console.error('An error occurred:', error);
-  });
-    
+  useEffect(() => {
+    getCompanyRecs().then(data => {
+      setCompanyDataRecs(data);
+    }).catch(error => {
+      console.error('An error occurred:', error);
+    });
+  }, []);
 
   return (
     <div className="tabs-container1">

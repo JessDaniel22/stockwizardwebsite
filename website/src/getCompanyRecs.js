@@ -1,4 +1,4 @@
-async function getCompanyRecs() {
+export async function getCompanyRecs() {
     const url = 'wss://cs261se.containers.uwcs.co.uk';
     const details = {"type": "COMPANY_LIST_REQUEST"}; 
     let attempts = 0;
