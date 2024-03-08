@@ -1,6 +1,13 @@
-async function requestCompanyRecs() {
+export async function requestCompanyRecs() {
     const url = 'wss://cs261se.containers.uwcs.co.uk'; 
-    const details = {"type": "COMPANY_LIST_REQUEST"}; 
+    const temp = {
+      "type": "LOGIN_REQUEST",
+      "data": {
+        "user": "bob@gmail.com",
+        "token": "2fdaafd2ec85c14976b6e80d184bf82df01b6e4835565f7a232efafc21b57657"
+      }
+    }
+    const details = {"type": "COMPANY_LIST_REQUEST", "data": {}}; 
     const socket = new WebSocket(url);
     let attempts = 0;
     let delay = 1000;
@@ -10,13 +17,16 @@ async function requestCompanyRecs() {
       //Open connection to web socket
       socket.addEventListener('open', (event) => {
           console.log('Socket opened'); 
+          socket.send(JSON.stringify(temp));
+
           socket.send(JSON.stringify(details));
+          console.log("details sent");
       });
 
-      //Listen for messages
-      socket.addEventListener('message', (event) => {
-          console.log('Server message: ', event.data);
-      });
+      // //Listen for messages
+      // socket.addEventListener('message', (event) => {
+      //     console.log('Server message: ', event.data);
+      // });
 
       //Handle connection closed
       socket.addEventListener('close', (event) => {

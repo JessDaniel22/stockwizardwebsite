@@ -1,11 +1,18 @@
-async function requestArticles(start_time, end_time, use_following_companies, companies) {
+export async function requestArticles(start_time, end_time, use_following_companies, companies) {
     const url = 'wss://cs261se.containers.uwcs.co.uk'; 
-    const details = {"type": "ARTICLES_REQUEST", "data": {
+    const details = {"type": "ARTICLE_REQUEST", "data": {
       "start_time": start_time,
       "end_time": end_time,
       "use_following_companies": use_following_companies,
       "companies": companies
-    }, "timestamp": null};  //////////////////TO DO
+    }};  
+    const temp = {
+      "type": "LOGIN_REQUEST",
+      "data": {
+        "user": "bob@gmail.com",
+        "token": "2fdaafd2ec85c14976b6e80d184bf82df01b6e4835565f7a232efafc21b57657"
+      }
+    }
     const socket = new WebSocket(url);
     let attempts = 0;
     let delay = 1000;
@@ -15,7 +22,11 @@ async function requestArticles(start_time, end_time, use_following_companies, co
       //Open connection to web socket
       socket.addEventListener('open', (event) => {
           console.log('Socket opened'); 
+          socket.send(JSON.stringify(temp));
+          
           socket.send(JSON.stringify(details));
+          console.log("details sent:")
+          console.log(details)
       });
 
       //Listen for messages
