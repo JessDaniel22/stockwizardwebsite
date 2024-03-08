@@ -131,7 +131,7 @@ const NewsArticleComponent = (start_time, end_time, use_following_companies, com
       title: article.title,
       summary: article.summary,
       url: article.url,
-      timepublished: moment(article.timepublished).format("Do MMMM, YYYY"),
+      timepublished: article.time_published,
       companies: article.companies
     }));
   }
