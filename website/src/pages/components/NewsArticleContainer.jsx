@@ -6,34 +6,34 @@ import moment from 'moment';
 const NewsArticleComponent = (start_time, end_time, use_following_companies, companies_list) => {
   const { companies, toggleFollow } = useCompanies();
 
-  // const articleData = {
-  //   id: 1,
-  //   title: "Tech Industry Trends",
-  //   summary:
-  //     "An overview of the latest trends in the tech industry, including AI advancements and blockchain technology.",
-  //   url: "https://www.technews.com",
-  //   timepublished: "2021-10-01",
-  //   companies: [
-  //     {
-  //       id: 1,
-  //       name: "TechCorp",
-  //       prediction: "The prediction is a score since..",
-  //       score: 0,
-  //     },
-  //     {
-  //       id: 2,
-  //       name: "InnovateX",
-  //       prediction: "The prediction is a score since..",
-  //       score: -9.4,
-  //     },
-  //     {
-  //       id: 3,
-  //       name: "FutureTech",
-  //       prediction: "The prediction is a score since.. ",
-  //       score: 8.5,
-  //     },
-  //   ],
-  // };
+  const articleData = {
+    id: 1,
+    title: "Tech Industry Trends",
+    summary:
+      "An overview of the latest trends in the tech industry, including AI advancements and blockchain technology.",
+    url: "https://www.technews.com",
+    timepublished: "2021-10-01",
+    companies: [
+      {
+        id: 1,
+        name: "TechCorp",
+        prediction: "The prediction is a score since..",
+        score: 0,
+      },
+      {
+        id: 2,
+        name: "InnovateX",
+        prediction: "The prediction is a score since..",
+        score: -0.4,
+      },
+      {
+        id: 3,
+        name: "FutureTech",
+        prediction: "The prediction is a score since.. ",
+        score: 0.5,
+      },
+    ],
+  };
   const [articleList, setArticleList] = useState([]);
 
 
@@ -117,13 +117,15 @@ const NewsArticleComponent = (start_time, end_time, use_following_companies, com
         console.log(ticker);
         console.log(data.companies[ticker]);
         tempCompany["id"] = t;
-        tempCompany["score"] = article.ticker_info.sentiment_score;
-        tempCompany["prediction"] = article.ticker_info.prediction_string;
+        tempCompany["score"] = article.ticker_info[t].sentiment;
+        tempCompany["prediction"] = article.ticker_info[t].prediction_string;
         tempCompanies.push(tempCompany);
       }
       temp["companies"] = tempCompanies; 
       cleaned.push(temp);
     }
+    console.log(cleaned);
+    console.log(articleData);
     return cleaned.map(article => ({
       title: article.title,
       summary: article.summary,
@@ -138,6 +140,7 @@ const NewsArticleComponent = (start_time, end_time, use_following_companies, com
   for (let i = 0; i < articleList.length; i++) {
     html_articles.push(<Cards
       articleData={articleList[i]}
+      // articleData={articleData}
       toggleFollow={toggleFollow}
       companies={companies}
     />);
