@@ -114,8 +114,9 @@ const NewsArticleComponent = (start_time, end_time, use_following_companies, com
         let tempCompany = {};
         let ticker = article.ticker_info[t].ticker;
         tempCompany["name"] = data.companies[ticker].company_name;
-        console.log(ticker);
-        console.log(data.companies[ticker]);
+        tempCompany["ticker"] = ticker;
+        // console.log(ticker);
+        // console.log(data.companies[ticker]);
         tempCompany["id"] = t;
         tempCompany["score"] = article.ticker_info[t].sentiment;
         tempCompany["prediction"] = article.ticker_info[t].prediction_string;
@@ -124,8 +125,8 @@ const NewsArticleComponent = (start_time, end_time, use_following_companies, com
       temp["companies"] = tempCompanies; 
       cleaned.push(temp);
     }
-    console.log(cleaned);
-    console.log(articleData);
+    // console.log(cleaned);
+    // console.log(articleData);
     return cleaned.map(article => ({
       title: article.title,
       summary: article.summary,

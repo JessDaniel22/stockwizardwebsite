@@ -9,8 +9,8 @@ const Cards = ({ articleData}) => {
   const navigate = useNavigate();
 
   
-  const handleCompanyClick = (companyId) => {
-    navigate(`/company/${companyId}`); // Navigate to company page
+  const handleCompanyClick = (companyTicker) => {
+    navigate(`/company/${companyTicker}`); // Navigate to company page
   };
 
   const handleArticleClick = (url) => {
@@ -37,7 +37,7 @@ const Cards = ({ articleData}) => {
           return (
             <div key={articleCompany.id} className="company-info-container">
               <div className="company-header">
-                <h3 onClick={() => handleCompanyClick(articleCompany.id)}>{articleCompany.name}
+                <h3 onClick={() => handleCompanyClick(articleCompany.ticker)}>{articleCompany.name}
                 {articleCompany.score > 0 ? (
                     <span style={{ color: 'green' }}>↑</span>
                   ) : articleCompany.score < 0 ? (
