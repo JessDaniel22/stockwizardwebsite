@@ -63,6 +63,12 @@ const NewsArticleComponent = (start_time, end_time, use_following_companies, com
     }};
     
     const socket = new WebSocket(url);
+
+    socket.onopen = () => {
+      console.log('Connection opened');
+      socket.send(JSON.stringify(login_request));
+      socket.send(JSON.stringify(article_request));
+    };
     
     socket.onmessage = (event) => {
       const eventData = JSON.parse(event.data);
@@ -74,12 +80,6 @@ const NewsArticleComponent = (start_time, end_time, use_following_companies, com
         // const cleaned = mapArticles(temp); // Use received articles
         // setArticles(cleaned); // Update the state with the cleaned articles
       }
-    };
-
-    socket.onopen = () => {
-      console.log('Connection opened');
-      socket.send(JSON.stringify(login_request));
-      socket.send(JSON.stringify(article_request));
     };
 
     socket.onclose = () => {
@@ -113,13 +113,11 @@ const NewsArticleComponent = (start_time, end_time, use_following_companies, com
       for (let t = 0; t < article.ticker_info.length; t++) {
         let tempCompany = {};
         let ticker = article.ticker_info[t].ticker;
-        for (let j = 0; j < data.companies.length; j++) {
-          if (data.companies[i] === ticker) {
-            tempCompany["company_name"] = data.companies[i].company_name;
-          }
-        }
+        tempCompany["name"] = data.companies[ticker].company_name;
+        console.log(ticker);
+        console.log(data.companies[ticker]);
         tempCompany["id"] = t;
-        tempCompany["sentiment_score"] = article.ticker_info.sentiment_score;
+        tempCompany["score"] = article.ticker_info.sentiment_score;
         tempCompany["prediction"] = article.ticker_info.prediction_string;
         tempCompanies.push(tempCompany);
       }

@@ -16,7 +16,7 @@ const yesterday = new Date(today);
 yesterday.setDate(yesterday.getDate() - 1);
 let start_time = yesterday.toISOString();
 let end_time = today.toISOString();
-let use_following_companies = true;
+let use_following_companies = false;
 let companies_list = {}
 // requestArticles(start_time,end_time,true, {});
 
