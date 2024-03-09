@@ -4,6 +4,16 @@ import NewsArticleComponent from './NewsArticleContainer';
 import Table from './Table';
 
 
+
+const today = new Date();
+const yesterday = new Date(today);
+yesterday.setDate(yesterday.getDate() - 1);
+let start_time = yesterday.toISOString();
+let end_time = today.toISOString();
+let use_following_companies = true;
+let companies_list = []
+
+
 const StocksNews = () => {
     const [activeTab, setActiveTab] = useState('stocks');
     const [data, setData] = useState([]);
@@ -49,7 +59,7 @@ const fetchData = async () => {
                     </div>
                 ) : (
                     <div className="news-content">
-                        <NewsArticleComponent />
+                        <NewsArticleComponent start_time={start_time} end_time={end_time} use_following_companies={use_following_companies}  companies_list={companies_list}/>
                     </div>
                 )}
             </div>
