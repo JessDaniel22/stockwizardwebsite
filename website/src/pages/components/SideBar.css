@@ -1,0 +1,61 @@
+.sidebar {
+    height: 100vh; /* Full-height */
+    width: 240px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #06132C; 
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
+    padding-top: 20px;
+    margin-top: 100px;
+    cursor: pointer;
+    -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS devices */
+
+  }
+
+  .sidebar ul {
+    padding: 0;
+    margin: 20px;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+
+  .sidebar .section1 ul li {
+    padding: 10px; 
+    font-size: 18px;
+    margin-bottom: 10px; 
+  }
+  
+  /* Style for the icons */
+  .sidebar .section1 ul li .icon {
+    margin-right: 10px;
+  }
+.bullets{
+    list-style: none;
+
+}
+
+.divider {
+    border-top: 1px solid #ccc; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+
+  }
+
+  .section1{
+    color: white;
+  }
+  
+.follow-title {
+    padding: 6px 8px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    text-decoration: underline;
+  }

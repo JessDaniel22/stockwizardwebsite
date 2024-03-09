@@ -18,7 +18,7 @@
     border-collapse: collapse;
   }
 
-  h2{
+  .table-title{
     margin-bottom: 20px;
     font-size: 15px;
    text-decoration: underline;

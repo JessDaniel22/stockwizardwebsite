@@ -2,6 +2,8 @@
   margin-top: 150px;
   display: flex;
   height: 100vh; /* Make the container take up the full height of the viewport */
+  margin-left: 260px;
+
 }
 
 .data-container, .company-info {
@@ -27,7 +29,7 @@
 .graph-container {
   margin-top: 20px;
   margin-bottom: 40px;
-  width: 650px;
+  width: 550px;
   height: 400px;
   flex-shrink: 0;
   padding: 32px;
@@ -37,7 +39,7 @@
 
 .news-container {
   margin-top: 20px;
-  width: 650px;
+  width: 550px;
   height: 400px;
   flex-shrink: 0;
   padding: 32px;
@@ -64,7 +66,7 @@
 }
 
 .info-container{
-  width: 650px;
+  width: 520px;
   height: 876px;
   flex-shrink: 0;
   color: white;

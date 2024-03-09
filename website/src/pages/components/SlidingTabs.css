@@ -10,8 +10,6 @@
   display: flex;
   overflow-x: auto; /* Allows horizontal scrolling */
   margin-bottom: 20px;
-  cursor: pointer;
-  -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS devices */
   padding-bottom: 8px;
 }
 

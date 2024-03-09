@@ -134,7 +134,7 @@ const Table = ({ data }) => {
 </div>
         </div>
       </div>
-      <h2>Based on your watchlist</h2>
+      <h2 className="table-title">Based on your watchlist</h2>
       <div className="table-container2">
         <table {...getTableProps()}>
           <thead>

@@ -21,10 +21,10 @@ const Cards = ({ articleData}) => {
   return (
     <div className="article-card">
       <h2 style={{ cursor: 'pointer' }}>
-        <span>{articleData.title}</span>
+        <span className='title'>{articleData.title}</span>
       {articleData.timepublished ? (
         <span className="time-published" >
-          {new Date(articleData.timepublished).toLocaleDateString()}
+          {articleData.timepublished}
         </span>
       ) : (
         ''

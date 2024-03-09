@@ -1,5 +1,6 @@
 import "./SignUpPage.css";
-import React, { useEffect, useRef, useState, useNavigate } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "../api/axios";
