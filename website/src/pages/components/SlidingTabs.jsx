@@ -28,7 +28,7 @@ const SlidingTabs = () => {
   return (
     <div className="tabs-container1">
       <div className="tabs1">
-        {companyDataRecs.map((tab, index) => (
+        {/* {companyDataRecs.map((tab, index) => (
           <div
             key={index}
             className={`tab ${activeTab === index ? 'active' : ''}`}
@@ -39,7 +39,7 @@ const SlidingTabs = () => {
             
             </span>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );

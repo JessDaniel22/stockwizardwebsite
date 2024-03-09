@@ -8,6 +8,7 @@ import React from "react";
 import SlidingTabs from "./components/SlidingTabs";
 import NewsArticleComponent from "./components/NewsArticleContainer";
 import Nav from "./components/Nav";
+import "./HomePage.css";
 import { requestArticles } from "../requestArticles"
 
 
@@ -24,8 +25,9 @@ function HomePage() {
   return (
     <div className="App">
     <Nav/>
-    <SlidingTabs />
+    <div className="page-content">
     <NewsArticleComponent start_time={start_time} end_time = {end_time} use_following_companies = {use_following_companies}  companies_list = {companies_list}/>
+    </div>
   </div>
   );
 }
