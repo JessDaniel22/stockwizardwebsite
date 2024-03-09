@@ -30,24 +30,12 @@ function Sidebar() {
             <ul className='bullets'>
             <li onClick={() => navigate('/')}><FontAwesomeIcon icon={faHome} /> <span>Home</span></li>
           <li onClick={() => navigate('/profile')}><FontAwesomeIcon icon={faUser} /> <span>Following</span></li>
+          <div className="divider" ></div>
           <li onClick={() => navigate('/settings')}><FontAwesomeIcon icon={faCog} /> <span>Settings</span></li>
           <li onClick={() => navigate('/login')}><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></li>
             </ul>
-            <div className="divider" ></div>
+   
             </div>
-            <div className="section2">
-      <h2 className='follow-title'>Following</h2>
-{/* 
-          <ul className="company-list">
-            {companyData.map((company, index) => (
-              <li key={index} onClick={() => navigate(`/company/${company}`)}>
-                {company}  
-              </li>
-            ))}
-          </ul> */}
-
-      
-    </div>
     </div>
   );
 }

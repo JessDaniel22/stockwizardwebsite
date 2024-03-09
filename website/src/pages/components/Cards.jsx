@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
 import { useCompanies } from '../../api/CompaniesContext';
-import './Cards.css'; // Assuming you've added styling
+import './Cards.css'; 
 
 const Cards = ({ articleData}) => {
   // State to hold the formatted time ago string
@@ -21,7 +21,7 @@ const Cards = ({ articleData}) => {
   return (
     <div className="article-card">
       <h2 style={{ cursor: 'pointer' }}>
-        <span className='title'>{articleData.title}</span>
+        <span className='title' onClick={handleArticleClick(articleData.url)}>{articleData.title}</span>
       {articleData.timepublished ? (
         <span className="time-published" >
           {articleData.timepublished}

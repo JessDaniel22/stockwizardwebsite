@@ -64,11 +64,6 @@ const Header = ()  => {
   const handleClick1 = () => {
     navigate('/');
   };
-
-  const navigateToPage = (path) => {
-    navigate(path); // Navigate to the specified path
-  };
-
  
   return (
     <nav className="navbar">
@@ -92,16 +87,7 @@ const Header = ()  => {
         {results && results.length > 0 && <SearchResultsList results={results} />}
       </div>
       <div className="icons">
-        <div className="profile-icon"  onClick={toggleDropdown} ref={dropdownRef}><FontAwesomeIcon icon={faUserCircle} color='white'/></div> 
-        {isDropdownVisible && (
-             <div className="profile-dropdown">
-             <ul>
-               <li><button onClick={() => navigateToPage('/profile')}>Profile</button></li>
-               <li className='settings-container'>Settings</li>
-               <li>Logout</li>
-             </ul>
-           </div>
-          )}
+        <div className="profile-icon"  onClick={() => navigate('/profile')} ><FontAwesomeIcon icon={faUserCircle} color='white'/></div> 
       </div>
     </nav>
   )
