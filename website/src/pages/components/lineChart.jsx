@@ -29,8 +29,9 @@ const LineChart = ({ labels, data, companyName }) => {
     datasets: [
       {
         label: companyName,
-        backgroundColor: "06132C",
-        borderColor: "ECECEC",
+        backgroundColor: "#1fd655",
+        borderColor: "#1fd655",
+        pointRadius: 0,
         data: data,
       },
     ],
@@ -38,7 +39,7 @@ const LineChart = ({ labels, data, companyName }) => {
 
   return (
     <div>
-      <Line data={chartData} />
+      <Line data={chartData} dot={false}/>
     </div>
   );
 };

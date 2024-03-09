@@ -49,11 +49,11 @@ const CompanyPage = () => {
   console.log(companyData, "companydata")
   let graphData = companyData.graph_data;
   console.log("Graph data", graphData)
-  let dates = Object.keys(graphData);
-  let vals = [];
-  for (let i=0; i < dates.length; i++) {
-    vals.push(dates[i]);
-  }
+  let dates = graphData.x
+  let vals = graphData.y
+  // for (let i=0; i < dates.length; i++) {
+  //   vals.push(dates[i]);
+  // }
 
 
   const today = new Date();
