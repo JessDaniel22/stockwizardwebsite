@@ -24,25 +24,6 @@ function LoginPage() {
     }
   };
 
-    // useEffect(() => {
-    //   const handleSubmit = async e => {
-    //     try {
-    //       await sendUserDetails(email,password);
-    //       const user_token = localStorage.getItem("user_token") || "undefined";
-    //       console.log('oken', user_token, user_token === "undefined")
-
-    //       if (user_token !== "undefined") {
-    //         console.log("aaa oken aaaa")
-    //         navigateToPage('/')
-    // }
-
-    //     } catch (error) {
-    //       console.error('An error occurred:', error);
-    //     }
-    //   };
-    //   fetchData();
-    // }, []); // Empty dependency array ensures the effect runs only once on component mount
-  
 
   return (
     <div className="split-page1">

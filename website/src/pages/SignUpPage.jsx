@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { sendNewUser } from "../sendNewUser";
 import axios from "../api/axios";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -12,6 +13,9 @@ const REGISTER_URL = "/signup";
  const SignUpPage = () => {
   const navigate = useNavigate();
 
+  const navigateToPage = (path) => {
+    navigate(path); // Navigate to the specified path
+  };
   const userRef = useRef();
   const errRef = useRef();  
 
@@ -70,35 +74,18 @@ const REGISTER_URL = "/signup";
     const v1 = EMAIL_REGEX.test(email);
     const v2 = PWD_REGEX.test(password);
     if (!v1 || !v2) {
-        setErrMsg("Invalid Entry");
-        return;         
-        }
-        try {
-          const response = await axios.post(REGISTER_URL,
-              JSON.stringify({ email, password }), // what varibales is the backend expecting?
-              {
-                  headers: { 'Content-Type': 'application/json' },
-                  withCredentials: true
-              }
-          );
-          console.log(response?.data);
-          console.log(response?.accessToken);
-          console.log(JSON.stringify(response))
-          setSuccess(true);
-          //clear state and controlled inputs
-          //need value attrib on inputs for this
-          setemail('');
-          setPassword('');
-          setConfirmedPassword('');
-      } catch (err) {
-          if (!err?.response) {
-              setErrMsg('No Server Response');
-          } else {
-              setErrMsg('Registration Failed')
-          }
-          errRef.current.focus();
-      }
-      }
+      setErrMsg("Invalid Entry");
+      return;         
+    }
+
+    let fullName = text.split(/\s+/);
+
+    let success = await sendNewUser(email,password, fullName[0], fullName[1]);
+    if (success) {
+      navigateToPage('/')
+    }
+
+  }
       
 
   return (
@@ -113,7 +100,7 @@ const REGISTER_URL = "/signup";
         <div className="form-containerS">
         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
           <h1>Create an account</h1>
-          <form onSubmit={handleRegister}>
+          <form onClick={handleRegister}>
           <label htmlFor="FullName">Full name</label>
           <input
             type="text"

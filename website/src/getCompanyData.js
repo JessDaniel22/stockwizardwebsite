@@ -20,11 +20,10 @@ export async function getCompanyData(ticker) {
 
       socket.onmessage = (event) => {
         const eventData = JSON.parse(event.data);
-        console.log("here2")
         if (eventData.type === "COMPANY_RESPONSE") { 
-          console.log("here", eventData.data)
           resolve(eventData.data); // Resolve the Promise with the data
         }
+        
       };
 
       socket.addEventListener('open', (event) => {

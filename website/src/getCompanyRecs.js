@@ -25,7 +25,7 @@ export async function getCompanyRecs() {
             let sortedData = Object.keys(eventData.data)
             resolve(sortedData); // Resolve the Promise with the data
             console.log("resolved")
-            // socket.close()
+            socket.close();
           }
         };
   
