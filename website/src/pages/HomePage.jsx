@@ -4,7 +4,7 @@ import "remixicon/fonts/remixicon.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
-// import "./HomePage.css";
+import "./HomePage.css";
 
 import React from "react";
 import SlidingTabs from "./components/SlidingTabs";
@@ -23,10 +23,9 @@ let companies_list = []
 // requestArticles(start_time,end_time,true, {});
 
 
-// <div className="App page-content">
 function HomePage() {
   return (
-    <div className="App">
+    <div className="App page-content">
     <Nav/>
     <SlidingTabs />
     <NewsArticleComponent start_time={start_time} end_time={end_time} use_following_companies={use_following_companies}  companies_list={companies_list}/>

@@ -9,6 +9,8 @@ import ProfilePage from './pages/ProfilePage';
 import CompanyPage from './pages/CompanyPage';
 import HomePage from './pages/HomePage';
 import { AuthProvider } from './context/AuthContext';
+import SlidingTabs from "./pages/components/SlidingTabs";
+
 import { CompaniesProvider } from './api/CompaniesContext';
 import ProtectedRoute from './pages/components/ProtectedRoute';
 
