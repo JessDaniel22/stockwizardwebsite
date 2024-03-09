@@ -22,8 +22,8 @@ export async function getCompanyRecs() {
           console.log(eventData)
           if (eventData.type === "COMPANY_LIST_RESPONSE") { 
             console.log("resolving")
-
-            resolve(eventData.data); // Resolve the Promise with the data
+            let sortedData = Object.keys(eventData.data)
+            resolve(sortedData); // Resolve the Promise with the data
             console.log("resolved")
             // socket.close()
           }

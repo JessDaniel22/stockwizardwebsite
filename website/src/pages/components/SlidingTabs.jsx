@@ -14,6 +14,7 @@ const SlidingTabs = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log("printhere")
         const data = await getCompanyRecs();
         // Assuming data.data contains the array of company recommendations
         setCompanyDataRecs(data);

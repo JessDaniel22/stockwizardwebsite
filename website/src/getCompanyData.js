@@ -13,17 +13,22 @@ export async function getCompanyData(ticker) {
 
 
   return new Promise((resolve, reject) => {
+    console.log("promise made")
     function connect() {
+
       let socket = new WebSocket(url);
 
       socket.onmessage = (event) => {
-        const eventData = JSON.parse(event);
+        const eventData = JSON.parse(event.data);
+        console.log("here2")
         if (eventData.type === "COMPANY_RESPONSE") { 
+          console.log("here", eventData.data)
           resolve(eventData.data); // Resolve the Promise with the data
         }
       };
 
       socket.addEventListener('open', (event) => {
+        console.log("asdfasdfasdfasdf")
         socket.send(JSON.stringify(temp))
         socket.send(JSON.stringify(details));
 

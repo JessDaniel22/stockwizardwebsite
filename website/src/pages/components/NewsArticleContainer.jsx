@@ -3,37 +3,8 @@ import Cards from "./Cards";
 import { useCompanies } from "../../api/CompaniesContext";
 import moment from 'moment';
 
-const NewsArticleComponent = (start_time, end_time, use_following_companies, companies_list) => {
+const NewsArticleComponent = ({start_time, end_time, use_following_companies, companies_list}) => {
   const { companies, toggleFollow } = useCompanies();
-
-  const articleData = {
-    id: 1,
-    title: "Tech Industry Trends",
-    summary:
-      "An overview of the latest trends in the tech industry, including AI advancements and blockchain technology.",
-    url: "https://www.technews.com",
-    timepublished: "2021-10-01",
-    companies: [
-      {
-        id: 1,
-        name: "TechCorp",
-        prediction: "The prediction is a score since..",
-        score: 0,
-      },
-      {
-        id: 2,
-        name: "InnovateX",
-        prediction: "The prediction is a score since..",
-        score: -0.4,
-      },
-      {
-        id: 3,
-        name: "FutureTech",
-        prediction: "The prediction is a score since.. ",
-        score: 0.5,
-      },
-    ],
-  };
   const [articleList, setArticleList] = useState([]);
 
 
@@ -50,22 +21,23 @@ const NewsArticleComponent = (start_time, end_time, use_following_companies, com
     };
 
     
-  const today = new Date();
-  const yesterday = new Date(today);
-  yesterday.setDate(yesterday.getDate() - 1);
-  let start_time = yesterday.toISOString();
-  let end_time = today.toISOString();
+  // const today = new Date();
+  // const yesterday = new Date(today);
+  // yesterday.setDate(yesterday.getDate() - 1);
+  // let start_time = yesterday.toISOString();
+  // let end_time = today.toISOString();
     const article_request = {"type": "ARTICLE_REQUEST", "data": {
       "start_time": start_time,
       "end_time": end_time,
-      "use_following_companies": true,
-      "companies": []
+      "use_following_companies": use_following_companies,
+      "companies": companies_list
     }};
     
     const socket = new WebSocket(url);
 
     socket.onopen = () => {
       console.log('Connection opened');
+      console.log(article_request)
       socket.send(JSON.stringify(login_request));
       socket.send(JSON.stringify(article_request));
     };
@@ -74,8 +46,6 @@ const NewsArticleComponent = (start_time, end_time, use_following_companies, com
       const eventData = JSON.parse(event.data);
       if (eventData.type === "ARTICLE_RESPONSE" ) { //|| eventData.type === "ARTICLE_PUSH"
 
-        console.log(eventData.data);
-        console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbb")
         setArticleList(cleanData(eventData.data)); //An array of article dictionaries.
         // const cleaned = mapArticles(temp); // Use received articles
         // setArticles(cleaned); // Update the state with the cleaned articles
