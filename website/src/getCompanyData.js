@@ -17,8 +17,9 @@ export async function getCompanyData(ticker) {
       let socket = new WebSocket(url);
 
       socket.onmessage = (event) => {
-        const eventData = JSON.parse(event);
+        const eventData = JSON.parse(event.data);
         if (eventData.type === "COMPANY_RESPONSE") { 
+          console.log(eventData)
           resolve(eventData.data); // Resolve the Promise with the data
         }
       };

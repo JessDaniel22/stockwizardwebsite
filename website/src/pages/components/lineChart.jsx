@@ -3,7 +3,7 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 
-const LineChart = ({ labels, data, companyName }) => {
+export const LineChart = ({ labels, data, companyName }) => {
   const chartData = {
 
 
