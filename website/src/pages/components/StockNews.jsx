@@ -7,7 +7,7 @@ import Table from './Table';
 
 const today = new Date();
 const yesterday = new Date(today);
-yesterday.setDate(yesterday.getDate() - 1);
+yesterday.setDate(yesterday.getDate() - 7);
 let start_time = yesterday.toISOString();
 let end_time = today.toISOString();
 let use_following_companies = true;
