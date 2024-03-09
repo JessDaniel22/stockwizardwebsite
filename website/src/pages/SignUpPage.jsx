@@ -68,38 +68,38 @@ const REGISTER_URL = "/signup";
   const handleRegister = async (e) => {
     e.preventDefault();
     const v1 = EMAIL_REGEX.test(email);
-        const v2 = PWD_REGEX.test(password);
-        if (!v1 || !v2) {
-            setErrMsg("Invalid Entry");
-            return;         
-            }
-            try {
-              const response = await axios.post(REGISTER_URL,
-                  JSON.stringify({ email, password }), // what varibales is the backend expecting?
-                  {
-                      headers: { 'Content-Type': 'application/json' },
-                      withCredentials: true
-                  }
-              );
-              console.log(response?.data);
-              console.log(response?.accessToken);
-              console.log(JSON.stringify(response))
-              setSuccess(true);
-              //clear state and controlled inputs
-              //need value attrib on inputs for this
-              setemail('');
-              setPassword('');
-              setConfirmedPassword('');
-          } catch (err) {
-              if (!err?.response) {
-                  setErrMsg('No Server Response');
-              } else {
-                  setErrMsg('Registration Failed')
+    const v2 = PWD_REGEX.test(password);
+    if (!v1 || !v2) {
+        setErrMsg("Invalid Entry");
+        return;         
+        }
+        try {
+          const response = await axios.post(REGISTER_URL,
+              JSON.stringify({ email, password }), // what varibales is the backend expecting?
+              {
+                  headers: { 'Content-Type': 'application/json' },
+                  withCredentials: true
               }
-              errRef.current.focus();
+          );
+          console.log(response?.data);
+          console.log(response?.accessToken);
+          console.log(JSON.stringify(response))
+          setSuccess(true);
+          //clear state and controlled inputs
+          //need value attrib on inputs for this
+          setemail('');
+          setPassword('');
+          setConfirmedPassword('');
+      } catch (err) {
+          if (!err?.response) {
+              setErrMsg('No Server Response');
+          } else {
+              setErrMsg('Registration Failed')
           }
-          }
-          
+          errRef.current.focus();
+      }
+      }
+      
 
   return (
     <>

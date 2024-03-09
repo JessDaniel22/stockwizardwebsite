@@ -3,5 +3,12 @@
     "bcryptjs": "^2.4.3",
     "chart.js": "^4.4.2",
     "react-chartjs-2": "^5.2.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  },
+  "scripts": {
+    "predeploy": "npn run build",
+    "deploy": "gh-pages -d build"
   }
 }
