@@ -1,67 +1,58 @@
-// async function sendUserDetails(email, password) {
-//     const url = 'wss://cs261se.containers.uwcs.co.uk'; 
-//     const bcrypt = require('bcrypt');
+import bcrypt from 'bcryptjs'
 
-//     async function hashPassword(password) {
-//         const saltRounds = 10;
-//         const hashedPassword = await new Promise((resolve, reject) => {
-//             bcrypt.hash(password, saltRounds, (err, hash) => {
-//                 if (err) reject(err);
-//                 resolve(hash);
-//             });
-//         });
+export async function sendUserDetails(email, password) {
+    const url = 'wss://cs261se.containers.uwcs.co.uk'; 
+    const salt = "$2a$10$5AsPeASpu4VrMIdQ6/La1O"
+    console.log(salt,"salt")
+    const hashedPassword = bcrypt.hashSync(password, salt)
+    const details = {"type": "LOGIN_REQUEST", "data":{"user": email, "password": hashedPassword}}; 
+    const socket = new WebSocket(url);
+
+    return new Promise((resolve, reject) => {
     
-//         return hashedPassword; // Return the hashed password
-//     }
+        function connect() {
 
-//     const hashedPassword = await hashPassword(password);
-//     const details = {"type": "LOGIN_REQUEST", "details":{"email": email, "password": hashedPassword}}; 
-//     const socket = new WebSocket(url);
-//     let attempts = 0;
-//     let delay = 1000;
+            //Open connection to web socket
+            socket.addEventListener('open', (event) => {
+                console.log('Socket opened'); 
+                socket.send(JSON.stringify(details));
+            });
 
-//     function connect() {
+            //Listen for messages
+            socket.addEventListener('message', (event) => {
+                console.log('Server message: ', event.data);
+            });
 
-//         //Open connection to web socket
-//         socket.addEventListener('open', (event) => {
-//             console.log('Socket opened'); 
-//             socket.send(JSON.stringify(details));
-//         });
+            socket.onmessage = (event) => {
+                const eventData = JSON.parse(event.data);
+                if (eventData.type === "LOGIN_RESPONSE") {
+                    if (eventData.data.success) {
+                        // localStorage.setItem('success', eventData.success)
+                        localStorage.setItem('user', email)
+                        localStorage.setItem('token', eventData.data.token)
+                        
+                    }
 
-//         //Listen for messages
-//         socket.addEventListener('message', (event) => {
-//             console.log('Server message: ', event.data);
-//         });
+                    resolve(eventData.data.success); // Resolve the Promise with the data
 
-//         socket.onmessage = (event) => {
-//             const eventData = JSON.parse(event);
-//             if (eventData.type === "LOGIN_RESPONSE") {
-//                 localStorage.setItem('user', eventData.token)
-//             }
-//         };
+                }
+                socket.close();
+            };
 
-//         //Handle connection closed
-//         socket.addEventListener('close', (event) => {
-//             console.log('Server closed connection: ', event.code);
+            //Handle connection closed
+            socket.addEventListener('close', (event) => {
+                console.log('Server closed connection: ', event.code);
 
-//             //Attempt to reconnect:
-//             if (attempts < 5) {
-//                 setTimeout(() => {
-//                 console.log('Reconnecting...');
-//                 connect();
-//                 attempts++;
-//                 delay = Math.min(delay * 2, 60000); //Double delay up to one minute
-//                 }, delay * (1 + 0.3 * Math.random())); //Jitter to avoid synchronised reconnection attempts
-//             } else {
-//                 console.log('Failed to reconnect after 5 attempts.');
-//             }
-//         });
+            });
 
-//         //Output error message
-//         socket.addEventListener('error', (event) => {
-//             console.log('WebSocket error: ', event);
-//         });
-//     }
-//     connect();
-// }
+
+
+            socket.addEventListener('error', (event) => {
+                console.log('WebSocket error: ', event);
+                reject(event); // Reject the Promise if there's an error
+            });
+        }
+        connect();
+    })
+};
 

@@ -9,8 +9,8 @@ export async function requestArticles(start_time, end_time, use_following_compan
     const temp = {
       "type": "LOGIN_REQUEST",
       "data": {
-        "user": "bob@gmail.com",
-        "token": "2fdaafd2ec85c14976b6e80d184bf82df01b6e4835565f7a232efafc21b57657"
+        "user": localStorage.getItem('user'),
+        "token": localStorage.getItem('token')
       }
     }
     const socket = new WebSocket(url);

@@ -1,28 +1,48 @@
 import "./LoginPage.css";
 import React, { useState, useEffect } from "react";
-import sendUserDetails from "../sendUserDetails.js";
+import {useNavigate} from 'react-router-dom';
+import { sendUserDetails } from "../sendUserDetails.js";
 
 function LoginPage() {
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState();
 
-  // const handleLogin = () => {
-  //   // Perform login logic here
-  //   sendUserDetails(email, password);
-  //     useEffect(() => {
-  //       const user = localStorage.getItem("user");
-  //       if (user) {
-  //         const foundUser = JSON.parse(user);
-  //         setUser(foundUser);
-  //       }
-  //     }, []);
-  //   console.log("Logging in...");
-  // };
+  const navigate = useNavigate();
 
-  // if (user) {
-  //   // TO DO -> route out of login page 
-  // }
+  const navigateToPage = (path) => {
+    navigate(path); // Navigate to the specified path
+  };
+
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    // sendUserDetails(email,password);
+    let success = await sendUserDetails(email,password);
+    if (success) {
+      navigateToPage('/')
+    }
+  };
+
+    // useEffect(() => {
+    //   const handleSubmit = async e => {
+    //     try {
+    //       await sendUserDetails(email,password);
+    //       const user_token = localStorage.getItem("user_token") || "undefined";
+    //       console.log('oken', user_token, user_token === "undefined")
+
+    //       if (user_token !== "undefined") {
+    //         console.log("aaa oken aaaa")
+    //         navigateToPage('/')
+    // }
+
+    //     } catch (error) {
+    //       console.error('An error occurred:', error);
+    //     }
+    //   };
+    //   fetchData();
+    // }, []); // Empty dependency array ensures the effect runs only once on component mount
+  
 
   return (
     <div className="split-page1">
@@ -45,7 +65,7 @@ function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="login-button">Login</button>
+          <button className="login-button" onClick={handleSubmit}>Login</button>
           <p className="signup-link">
             Don't have an account? <a href="/signup">Sign up</a>
           </p>

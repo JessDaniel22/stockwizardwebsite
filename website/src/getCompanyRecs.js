@@ -5,8 +5,8 @@ export async function getCompanyRecs() {
     const temp = {
       "type": "LOGIN_REQUEST",
       "data": {
-        "user": "bob@gmail.com",
-        "token": "2fdaafd2ec85c14976b6e80d184bf82df01b6e4835565f7a232efafc21b57657"
+        "user": localStorage.getItem('user'),
+        "token": localStorage.getItem('token')
       }
     }
     const details = {"type": "COMPANY_LIST_REQUEST", "data": {}}; 
@@ -43,17 +43,7 @@ export async function getCompanyRecs() {
         socket.addEventListener('close', (event) => {
           console.log('Server closed connection: ', event.code);
   
-          //Attempt to reconnect:
-          if (attempts < 5) {
-            setTimeout(() => {
-              console.log('Reconnecting...');
-              connect();
-              attempts++;
-              delay = Math.min(delay * 2, 60000); //Double delay up to one minute
-            }, delay * (1 + 0.3 * Math.random())); //Jitter to avoid synchronised reconnection attempts
-          } else {
-            console.log('Failed to reconnect after 5 attempts.');
-          }
+
         });
   
         socket.addEventListener('error', (event) => {
