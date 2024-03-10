@@ -1,4 +1,4 @@
-async function requestSearch(inputText) {
+export async function requestSearch(inputText) {
     const url = 'wss://cs261se.containers.uwcs.co.uk'; 
     const details = {"type": "SEARCH_REQUEST", "data": {
       "text" : inputText
@@ -6,7 +6,6 @@ async function requestSearch(inputText) {
     const socket = new WebSocket(url);
     let attempts = 0;
     let delay = 1000;
-
 
     function connect() {
       //Open connection to web socket

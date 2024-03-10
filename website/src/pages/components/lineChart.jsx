@@ -8,11 +8,7 @@ import {
   Title,
   Tooltip,
   Legend,
-  
 } from "chart.js"
-// import { CategoryScale, Chart } from "chart.js";
-// import { Chart as ChartJS } from "chart.js/auto"
-// Chart.register(CategoryScale);
 import { Line } from "react-chartjs-2";
 
 ChartJS.register(CategoryScale,
@@ -21,7 +17,8 @@ ChartJS.register(CategoryScale,
   LineElement,
   Title,
   Tooltip,
-  Legend);
+  Legend
+);
 
 const LineChart = ({ labels, data, companyName }) => {
   const chartData = {

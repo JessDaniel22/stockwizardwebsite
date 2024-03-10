@@ -1,35 +1,30 @@
 import React, { useState, useEffect, useRef  } from 'react';
 import './nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faChartLine, faCog, faNewspaper, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import {useNavigate} from 'react-router-dom';
 import SearchResultsList from './SearchResultsList';
 
 
 const Header = ()  => {
 
-//fetching from json server!!!!
-
-
   const [input, setInput] = useState(''); 
   const [results, setResults] = useState([]);
-
   const fetchData = (value) => {
     fetch('')
-      .then((response) => response.json())
-      .then((json) => {
-        const results = json.filter((user) => {
-          return (
-            value &&
-            user &&
-            user.name &&
-            user.name.toLowerCase().includes(value) &&
-            user.symbol
-          );
-        });
-        setResults(results);
+    .then((response) => response.json())
+    .then((json) => {
+      const results = json.filter((user) => {
+        return (
+          value &&
+          user &&
+          user.name &&
+          user.name.toLowerCase().includes(value) &&
+          user.symbol
+        );
       });
-      
+      setResults(results);
+    });  
   };
 
   const handleChange = (value) => {
@@ -38,13 +33,8 @@ const Header = ()  => {
   };
 
   const navigate = useNavigate();
-
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const dropdownRef = useRef(null); // Ref for the dropdown
-
-  const toggleDropdown = () => {
-    setIsDropdownVisible(!isDropdownVisible);
-  };
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -52,12 +42,10 @@ const Header = ()  => {
         setIsDropdownVisible(false);
       }
     }
-     // Add when the dropdown is visible
-     if (isDropdownVisible) {
+    // Add when the dropdown is visible
+    if (isDropdownVisible) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-
-    // Cleanup
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isDropdownVisible]);
 
@@ -69,19 +57,17 @@ const Header = ()  => {
     <nav className="navbar">
       <div className='image-container1' onClick={handleClick1}></div> 
       <div className="search-bar">
-      <form
-            className='search-form d-flex align-items-center'
-        >
-            <button type='submit' title='Search'>
-                <i className='bi bi-search'></i>
-            </button>
+        <form className='search-form d-flex align-items-center'>
+          <button type='submit' title='Search'>
+            <i className='bi bi-search'></i>
+          </button>
             <input
-                type='text'
-                name='query'
-                placeholder='Search'
-                title='Enter search keyboard' 
-                value={input}
-                onChange={(e) => handleChange(e.target.value)}
+              type='text'
+              name='query'
+              placeholder='Search'
+              title='Enter search keyboard' 
+              value={input}
+              onChange={(e) => handleChange(e.target.value)}
             />    
         </form>
         {results && results.length > 0 && <SearchResultsList results={results} />}

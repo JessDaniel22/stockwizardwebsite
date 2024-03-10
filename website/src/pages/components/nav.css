@@ -1,4 +1,4 @@
-.image-container1{
+.image-container1 {
   height: 100px;
   width: 100px;
   background-image: url('../../assets/cover-image-removebg-preview.png');
@@ -7,13 +7,13 @@
   
 }
 
-.search-form input{
+.search-form input {
   width: 50%;
   border: none;
   background: #D9D9D9;
 }
 
-.search-bar{
+.search-bar {
   min-width: 360px;
   padding: 0 20px;
   justify-self: right;
@@ -37,109 +37,107 @@
   background: #D9D9D9;
 }
 
-
-.search-bar button{
+.search-bar button {
   border: 0;
   padding: 0;
   background: none;
 }
 
-.search-bar button i{
+.search-bar button i {
   color: #06132C;
   padding: 16px;
 } 
 
 .navbar {
-    position: fixed;
-    top: 0; /* Align navbar to the top of the viewport */
-    left: 0; /* Align navbar to the left of the viewport */
-    width: 100%; /* Ensure navbar spans the full width of the viewport */
-    z-index: 1000; /* Ensure navbar stays on top of other content */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  position: fixed;
+  top: 0; /* Align navbar to the top of the viewport */
+  left: 0; /* Align navbar to the left of the viewport */
+  width: 100%; /* Ensure navbar spans the full width of the viewport */
+  z-index: 1000; /* Ensure navbar stays on top of other content */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    background-color: #333;
-    flex-shrink: 0;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    display: flex;
-    justify-content: space-between;
-    background-color: #06132C;
-    padding: 0px 20px 10px 20px;
-  }
-  
-  .search-bar input {
-    padding: 5px;
-  }
-  
-  .icons div {
-    display: inline-block;
-    margin: 0px 20px 0px 20px;
-    cursor: pointer;
-    font-size: 28px;
-  }
+  background-color: #333;
+  flex-shrink: 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  background-color: #06132C;
+  padding: 0px 20px 10px 20px;
+}
+
+.search-bar input {
+  padding: 5px;
+}
+
+.icons div {
+  display: inline-block;
+  margin: 0px 20px 0px 20px;
+  cursor: pointer;
+  font-size: 28px;
+}
 
 
-  .profile-icon {
-    position: relative;
-    cursor: pointer;
-  }
-  
- 
-  
-  .profile-dropdown::before {
-    content: "";
-    position: absolute;
-    top: -10px; /* Adjust based on the size of the triangle */
-    right: 15px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #06132C; /* Match dropdown background color */
-  }
-  
-  .profile-dropdown ul {
-    list-style: none;
-    padding: 5px;
-    margin: 0;
+.profile-icon {
+  position: relative;
+  cursor: pointer;
+}
 
-  }
-  
-  .profile-dropdown ul li {
-    padding: 12px 20px;
-    text-align: left;
-    display: block;
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-  }
-  
-  .profile-dropdown ul li:hover {
-    background-color: #f1f1f1;
-    color: black;
-  }
 
-  .profile-dropdown {
-    border-radius: 8px;
-    position: absolute;
-    top: 100%; /* This positions the dropdown right below the profile icon */
-    right: 0;
-    background-color: #112140;
-    color: white;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1000; /* Ensure it's on top of other content */
-  }
-  
-  .profile-dropdown::before {
-    content: "";
-    position: absolute;
-    top: -10px; /* Adjust based on the size of the triangle */
-    right: 20px; /* Adjust so the arrow points to the icon */
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #112140; /* Match dropdown background color */
-  }
 
-  .settings-container {
-    border-bottom: 1px solid #fff;
-  }
+.profile-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust based on the size of the triangle */
+  right: 15px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #06132C; /* Match dropdown background color */
+}
+
+.profile-dropdown ul {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+.profile-dropdown ul li {
+  padding: 12px 20px;
+  text-align: left;
+  display: block;
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+}
+
+.profile-dropdown ul li:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.profile-dropdown {
+  border-radius: 8px;
+  position: absolute;
+  top: 100%; /* This positions the dropdown right below the profile icon */
+  right: 0;
+  background-color: #112140;
+  color: white;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.profile-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust based on the size of the triangle */
+  right: 20px; /* Adjust so the arrow points to the icon */
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #112140; /* Match dropdown background color */
+}
+
+.settings-container {
+  border-bottom: 1px solid #fff;
+}

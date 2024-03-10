@@ -3,13 +3,11 @@ import bcrypt from 'bcryptjs'
 export async function sendUserDetails(email, password) {
     const url = 'wss://cs261se.containers.uwcs.co.uk'; 
     const salt = "$2a$10$5AsPeASpu4VrMIdQ6/La1O"
-    console.log(salt,"salt")
     const hashedPassword = bcrypt.hashSync(password, salt)
     const details = {"type": "LOGIN_REQUEST", "data":{"user": email, "password": hashedPassword}}; 
     const socket = new WebSocket(url);
 
     return new Promise((resolve, reject) => {
-    
         function connect() {
 
             //Open connection to web socket
@@ -30,11 +28,8 @@ export async function sendUserDetails(email, password) {
                         // localStorage.setItem('success', eventData.success)
                         localStorage.setItem('user', email)
                         localStorage.setItem('token', eventData.data.token)
-                        
                     }
-
                     resolve(eventData.data.success); // Resolve the Promise with the data
-
                 }
                 socket.close();
             };
@@ -44,8 +39,6 @@ export async function sendUserDetails(email, password) {
                 console.log('Server closed connection: ', event.code);
 
             });
-
-
 
             socket.addEventListener('error', (event) => {
                 console.log('WebSocket error: ', event);

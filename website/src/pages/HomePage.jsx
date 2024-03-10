@@ -1,17 +1,12 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "remixicon/fonts/remixicon.css";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-
 import "./HomePage.css";
-
 import React from "react";
 import SlidingTabs from "./components/SlidingTabs";
 import NewsArticleComponent from "./components/NewsArticleContainer";
 import Nav from "./components/Nav";
-import { requestArticles } from "../requestArticles"
-
 
 const today = new Date();
 const yesterday = new Date(today);
@@ -20,7 +15,6 @@ let start_time = yesterday.toISOString();
 let end_time = today.toISOString();
 let use_following_companies = false;
 let companies_list = []
-// requestArticles(start_time,end_time,true, {});
 
 
 function HomePage() {

@@ -4,13 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { sendNewUser } from "../sendNewUser";
-import axios from "../api/axios";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = "/signup";
 
- const SignUpPage = () => {
+const SignUpPage = () => {
   const navigate = useNavigate();
 
   const navigateToPage = (path) => {
@@ -18,21 +16,16 @@ const REGISTER_URL = "/signup";
   };
   const userRef = useRef();
   const errRef = useRef();  
-
   const [text, setname] = useState("");
-
   const [email, setemail] = useState("");
   const [validEmail, setValidEmail] = useState(false);
   const [emailFocused, setEmailFocused] = useState(false);
-  
   const [password, setPassword] = useState("");
   const [validPassword, setValidPassword] = useState(false);
   const [passwordFocused, setPasswordFocused] = useState(false);
-
   const [confirmPassword, setConfirmedPassword] = useState("");
   const [validMatch, setValidMatch] = useState(false);
   const [matchFocused, setMatchFocused] = useState(false);
-
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -79,12 +72,10 @@ const REGISTER_URL = "/signup";
     }
 
     let fullName = text.split(/\s+/);
-
     let success = await sendNewUser(email,password, fullName[0], fullName[1]);
     if (success) {
       navigateToPage('/')
     }
-
   }
       
 
@@ -94,13 +85,12 @@ const REGISTER_URL = "/signup";
                 navigateToLogin()
             ) : (
     <div className="split-pageS">
-      <div className="image-container">
-      </div>
+      <div className="image-container"></div>
       <div className="register-details">
         <div className="form-containerS">
         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-          <h1>Create an account</h1>
-          <form onClick={handleRegister}>
+        <h1>Create an account</h1>
+        <form onClick={handleRegister}>
           <label htmlFor="FullName">Full name</label>
           <input
             type="text"
@@ -136,7 +126,7 @@ const REGISTER_URL = "/signup";
           <p id="uidnote" className={emailFocused && email && !validEmail ? "instructions" : "offscreen"}>
             <FontAwesomeIcon icon={faInfoCircle} />
             Must be a valid email.
-            </p>
+          </p>
 
           <label htmlFor="password">
             Password
@@ -172,8 +162,8 @@ const REGISTER_URL = "/signup";
             </span>
             <span className={validMatch || !confirmPassword || !matchFocused ? "hide" : "invalid"}>
               <FontAwesomeIcon icon={faTimes} />
-              </span>
-              </label>
+            </span>
+          </label>
           <input
             type="password"
             id="confirmPassword"
@@ -192,13 +182,13 @@ const REGISTER_URL = "/signup";
                         </p>
 
           <button className="register-button" disabled={!validEmail || !validPassword || !validMatch ? true : false}>Register</button>
-          </form>
-          <p className="login-link">
-            Already have an account? <a href="/login"> Log in</a>
-          </p>
-        </div>
+        </form>
+        <p className="login-link">
+          Already have an account? <a href="/login"> Log in</a>
+        </p>
       </div>
     </div>
+  </div>
         )}
             </>
   );

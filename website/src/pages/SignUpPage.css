@@ -18,14 +18,14 @@
   background-repeat: no-repeat;
 }
 
-.form-containerS h1{
+.form-containerS h1 {
   font-size: 28px;
   font-weight: 500;
   color: #06132C;
   margin-bottom: 20px;
 }
 
-.form-containerS label{
+.form-containerS label {
   font-size: 15px;
   font-weight: 200;
   color: #06132C;
@@ -63,22 +63,22 @@
   line-height: normal;
 }
 
-.form-containerS{
+.form-containerS {
   width: 400px;
   height: 740px;
   padding: 32px;
   border-radius: 30px;
   background-color: #F7F7F7;
-
 }
 
-.login-link{
+.login-link {
   text-align: center;
   margin-top: 20px;
   font-size: 12px;
   color: #06132C;
   text-decoration: none;
 }
+
 .instructions {
   font-size: 0.75rem;
   border-radius: 0.5rem;

@@ -4,7 +4,6 @@ import Sidebar from './SideBar';
 
 const Layout = ({ children }) => {
   return (
-
     <>
     <Sidebar />
     <Outlet />

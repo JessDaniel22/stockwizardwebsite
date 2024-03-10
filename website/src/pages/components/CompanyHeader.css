@@ -1,15 +1,12 @@
 /* CompanyHeader.css */
 .company-header {
   display: flex;
-
   align-items: flex-start;
   gap: 50px;
   margin: 30px
-
 }
 
 .company-title {
-
   color: #06132C; 
   font-size: 48px;
   font-style: normal;
@@ -41,6 +38,4 @@
   font-weight: 400;
   line-height: normal;
   border: none;
-
-
 }

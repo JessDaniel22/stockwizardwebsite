@@ -3,6 +3,7 @@ export async function requestCompanyRecs() {
     const temp = {
       "type": "LOGIN_REQUEST",
       "data": {
+        // Temp data for testing
         "user": "bob@gmail.com",
         "token": "2fdaafd2ec85c14976b6e80d184bf82df01b6e4835565f7a232efafc21b57657"
       }

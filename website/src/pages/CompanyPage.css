@@ -3,15 +3,11 @@
   display: flex;
   height: 100vh; /* Make the container take up the full height of the viewport */
   margin-left: 260px;
-
 }
 
 .data-container, .company-info {
   flex: 1; /* Each child takes up an equal amount of space */
-
   padding: 20px;
-
-  
 }
 
 .news-container {
@@ -47,14 +43,14 @@
   background: #ECECEC;
 }
 
-.info-container h1{
+.info-container h1 {
   font-size: 28px;
   font-weight: 500;
   color: #06132C;
   margin-bottom: 20px;
 }
 
-.info-container label{
+.info-container label {
   font-size: 15px;
   font-weight: 200;
   color: #06132C;
@@ -73,7 +69,6 @@
   padding: 32px;
   border-radius: 30px;
   background-color: #06132C;
-
 }
 
 .info-container header{

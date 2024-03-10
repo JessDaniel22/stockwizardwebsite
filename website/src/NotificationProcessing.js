@@ -5,8 +5,6 @@ async function notifications() {
 
   function connect() {
     let socket = new WebSocket(url);
-
-
     socket.onmessage = (event) => {
       const eventData = JSON.parse(event);
       if (eventData.type === "NOTIFICATION_PUSH") {
@@ -48,10 +46,9 @@ async function notifications() {
   function notificationProcessing(notificationData) {
    // Check if the browser supports notifications
     if ('Notification' in window) {
-      // Request permission (if not already granted)
+      // Request permission 
       Notification.requestPermission().then((permission) => {
           if (permission === 'granted') {
-              // Create a notification
               const notification = new Notification({
                 title: notificationData.title,
                 body: notificationData.body

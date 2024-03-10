@@ -1,6 +1,6 @@
 import "./SearchResults.css";
 
- const SearchResult = ({ result }) => {
+const SearchResult = ({ result }) => {
   return (
     <div
       className="search-result"

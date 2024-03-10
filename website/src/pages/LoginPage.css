@@ -13,22 +13,19 @@
 
 .image-container {
   background-image: url('../assets/cover-image-removebg-preview.png'), radial-gradient(circle at center top, #0a2349 ,  #0c2246,#091a36, #081533,  #05152e, #04142d, #06132C, #020f22, #010025);
-  /* linear-gradient(90deg, #020f22,#010e21, #021325, #0c2246) */
   background-position: 50%; /* Center the background image */
   background-size: 400px, cover; /* Cover the entire container */
   background-repeat: no-repeat;
-  
 }
 
-.form-containerL h1{
+.form-containerL h1 {
   font-size: 28px;
   font-weight: 500;
   color: #06132C;
   margin-bottom: 20px;
-
 }
 
-.form-containerL label{
+.form-containerL label {
   font-size: 15px;
   font-weight: 200;
   color: #06132C;
@@ -66,16 +63,15 @@
   line-height: normal;
 }
 
-.form-containerL{
+.form-containerL {
   width: 400px;
   height: 500px;
   padding: 32px;
   border-radius: 30px;
   background-color: #F7F7F7;
-
 }
 
-.signup-link{
+.signup-link {
   text-align: center;
   margin-top: 20px;
   font-size: 12px;

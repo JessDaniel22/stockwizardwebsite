@@ -24,16 +24,15 @@
   align-items: center;
 }
  
-h3{
+h3 {
   display: flex;
-
   justify-content: space-between;
   gap: 10px;
   font-size: 20px;
 }
 
 
-.button{
+.button {
   background-color: #06132C; 
   border: none;
   color: white;
@@ -49,21 +48,18 @@ h3{
 margin-left: 20px;
 }
 
-h2{
+h2 {
   font-weight: bold;
   text-decoration: none;
-
 }
 
-.title{
+.title {
   font-size: 25px;
   text-decoration: none;
   margin-bottom: 5px;
-
-
 }
 
-.summary{
+.summary {
   font-size: 15px;
 }
 
@@ -73,7 +69,6 @@ h2{
   align-items: flex-end;
   margin-left: auto; /* Push it to the right */
   gap: 10px; /* More space between follow button and date */
-
 }
 
 .article-card {
@@ -84,10 +79,9 @@ h2{
   border-radius: 15px;
   background: #06132C;
   color: white;
-
 }
 
-.time-published{
+.time-published {
   display: flex;
   justify-content: space-between;
   font-size: 15px;
