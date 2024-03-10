@@ -7,7 +7,7 @@
 
 .tabs1 {
   display: flex;
-  overflow-x: auto; /* Allows horizontal scrolling */
+  overflow-x: auto; 
   margin-bottom: 20px;
   padding-bottom: 8px;
 }
@@ -24,7 +24,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  box-sizing: border-box; /* Ensures padding doesn't add to the tab's width */
+  box-sizing: border-box; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,8 +37,8 @@
 
 .info-icon {
   display: inline-block;
-  margin-left: 20px; /* Adjust space between text and icon */
-  vertical-align: middle; /* Aligns icon with the middle of the text */
-  font-size: 0.8em; /* Adjusts the size of the icon */
+  margin-left: 20px; 
+  vertical-align: middle; 
+  font-size: 0.8em; 
 }
 

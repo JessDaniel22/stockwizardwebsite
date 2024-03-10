@@ -22,7 +22,6 @@ function SettingsPage() {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleSave = () => {
-    // Perform save logic here
     console.log("Saving changes...");
   };
 

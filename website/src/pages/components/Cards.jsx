@@ -4,7 +4,6 @@ import { useCompanies } from '../../api/CompaniesContext';
 import './Cards.css'; 
 
 const Cards = ({ articleData}) => {
-  // State to hold the formatted time ago string
   const { companies, toggleFollow } = useCompanies();
   const navigate = useNavigate();
 

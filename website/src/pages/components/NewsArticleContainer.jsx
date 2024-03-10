@@ -92,7 +92,7 @@ const NewsArticleComponent = ({start_time, end_time, use_following_companies, co
     }));
   }
 
-  // Function to clean articles
+ 
   const html_articles = [];
   for (let i = 0; i < articleList.length; i++) {
     html_articles.push(<Cards

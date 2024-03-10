@@ -12,7 +12,7 @@ const SignUpPage = () => {
   const navigate = useNavigate();
 
   const navigateToPage = (path) => {
-    navigate(path); // Navigate to the specified path
+    navigate(path);
   };
   const userRef = useRef();
   const errRef = useRef();  

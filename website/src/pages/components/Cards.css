@@ -1,6 +1,6 @@
 .companies-list {
   display: flex;
-  flex-direction: column; /* Changed from flex-wrap */
+  flex-direction: column; 
   align-items: flex-start;
 }
 
@@ -10,17 +10,16 @@
   background: #EEE;
   color: black;
   border: 1px solid #C8C8C8;
-  padding: 5px; /* Slightly reduced padding */
-  margin: 5px 0; /* Slightly reduced margin */
-  width: 100%; /* Adjust width to make the container thinner */
-
+  padding: 5px; 
+  margin: 5px 0; 
+  width: 100%;
 }
 
 /* Flex layout for the header containing the company name, score, and date */
 .company-header {
   display: flex;
   justify-content: space-between;
-  gap: 10px; /* More space between company name and follow button */
+  gap: 10px; 
   align-items: center;
 }
  
@@ -67,13 +66,12 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-left: auto; /* Push it to the right */
-  gap: 10px; /* More space between follow button and date */
+  margin-left: auto; 
+  gap: 10px; 
 }
 
 .article-card {
-  /* Dynamic height based on content */
-  padding: 15px; /* Slightly reduced padding */
+  padding: 15px; 
   margin: 50px ;
   border: 1px solid #C8C8C8;
   border-radius: 15px;

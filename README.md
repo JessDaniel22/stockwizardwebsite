@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Stock Wizard Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+The Stock Wizard Website is a React.js web application that allows users to track and analyze stock market data. This documentation provides instructions on how to run the web app locally and how to use its features.
 
-## Available Scripts
+## Prerequisites
+Before running the Stock Wizard Website, ensure that you have the following prerequisites installed on your machine:
+- Node.js (version 6.0.0 or higher)
+- npm (version 6.0.0 or higher)
 
-In the project directory, you can run:
+3. Install the project dependencies:
+    ```bash
+    npm install
+    ```
 
-### `npm start`
+## Running the Web App
+To run the Stock Wizard Website locally, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Start the development server:
+    ```bash
+    npm start
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Open your web browser and navigate to `http://localhost:3000` to access the website.
 
-### `npm test`
+## Usage
+Once the Stock Wizard Website is running, you can use the following features:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. User Registration:
+    - Click on the "Sign Up" button to create a new account.
+    - Fill in the required information and click "Register" to create your account.
 
-### `npm run build`
+2. User Login:
+    - Click on the "Login" button to access your account.
+    - Enter your credentials and click "Login" to log in.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Article information:
+    - Click on an article title to navigate to orginal article https link.
+    - Click on the company name to navigate to the company's information page to view sentiment anakysis and stock prediction information.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Profile:
+    - View table of followed companies and their stock information in table format.
+    - Followed company article cards will appear on news section of the profile page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. Settings:
+    - Customize your account settings, such as profile picture and notification preferences.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

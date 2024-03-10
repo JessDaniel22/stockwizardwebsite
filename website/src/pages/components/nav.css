@@ -2,7 +2,7 @@
   height: 100px;
   width: 100px;
   background-image: url('../../assets/cover-image-removebg-preview.png');
-  background-size: cover; /* Cover the entire container */
+  background-size: cover; 
   margin-left: auto;
   
 }
@@ -33,7 +33,7 @@
 }
 
 .search-input {
-  flex-grow: 1; /* Ensures input takes up remaining space */
+  flex-grow: 1; 
   background: #D9D9D9;
 }
 
@@ -50,10 +50,10 @@
 
 .navbar {
   position: fixed;
-  top: 0; /* Align navbar to the top of the viewport */
-  left: 0; /* Align navbar to the left of the viewport */
-  width: 100%; /* Ensure navbar spans the full width of the viewport */
-  z-index: 1000; /* Ensure navbar stays on top of other content */
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 1000; 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,11 +89,11 @@
 .profile-dropdown::before {
   content: "";
   position: absolute;
-  top: -10px; /* Adjust based on the size of the triangle */
+  top: -10px; 
   right: 15px;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #06132C; /* Match dropdown background color */
+  border-bottom: 10px solid #06132C; 
 }
 
 .profile-dropdown ul {
@@ -119,23 +119,23 @@
 .profile-dropdown {
   border-radius: 8px;
   position: absolute;
-  top: 100%; /* This positions the dropdown right below the profile icon */
+  top: 100%; 
   right: 0;
   background-color: #112140;
   color: white;
   min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 1000; /* Ensure it's on top of other content */
+  z-index: 1000; 
 }
 
 .profile-dropdown::before {
   content: "";
   position: absolute;
-  top: -10px; /* Adjust based on the size of the triangle */
-  right: 20px; /* Adjust so the arrow points to the icon */
+  top: -10px; 
+  right: 20px; 
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #112140; /* Match dropdown background color */
+  border-bottom: 10px solid #112140; 
 }
 
 .settings-container {
