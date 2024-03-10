@@ -38,26 +38,8 @@ const fetchData = async () => {
   };
   const recommendedCompaniesData = [
     { ticker: "FB", company_name: "Meta Platforms Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: 0.4, wms_2D: 0.3, wms_3D: 0.2 } },
-    { ticker: "NVDA", company_name: "NVIDIA Corporation", industry: "Technology", location: "California", sentiment: { wms_1D: 0.3, wms_2D: 0.2, wms_3D: 0.1 } },
-    { ticker: "JPM", company_name: "JPMorgan Chase & Co.", industry: "Finance", location: "New York", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
     { ticker: "NFLX", company_name: "Netflix Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: -0.1, wms_2D: 0.0, wms_3D: -0.2 } },
-    { ticker: "PYPL", company_name: "PayPal Holdings Inc.", industry: "Finance", location: "California", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
-    { ticker: "FB", company_name: "Meta Platforms Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: 0.4, wms_2D: 0.3, wms_3D: 0.2 } },
-    { ticker: "NVDA", company_name: "NVIDIA Corporation", industry: "Technology", location: "California", sentiment: { wms_1D: 0.3, wms_2D: 0.2, wms_3D: 0.1 } },
-    { ticker: "JPM", company_name: "JPMorgan Chase & Co.", industry: "Finance", location: "New York", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
-    { ticker: "NFLX", company_name: "Netflix Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: -0.1, wms_2D: 0.0, wms_3D: -0.2 } },
-    { ticker: "PYPL", company_name: "PayPal Holdings Inc.", industry: "Finance", location: "California", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
-    { ticker: "FB", company_name: "Meta Platforms Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: 0.4, wms_2D: 0.3, wms_3D: 0.2 } },
-    { ticker: "NVDA", company_name: "NVIDIA Corporation", industry: "Technology", location: "California", sentiment: { wms_1D: 0.3, wms_2D: 0.2, wms_3D: 0.1 } },
-    { ticker: "JPM", company_name: "JPMorgan Chase & Co.", industry: "Finance", location: "New York", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
-    { ticker: "NFLX", company_name: "Netflix Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: -0.1, wms_2D: 0.0, wms_3D: -0.2 } },
-    { ticker: "PYPL", company_name: "PayPal Holdings Inc.", industry: "Finance", location: "California", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
-    { ticker: "FB", company_name: "Meta Platforms Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: 0.4, wms_2D: 0.3, wms_3D: 0.2 } },
-    { ticker: "NVDA", company_name: "NVIDIA Corporation", industry: "Technology", location: "California", sentiment: { wms_1D: 0.3, wms_2D: 0.2, wms_3D: 0.1 } },
-    { ticker: "JPM", company_name: "JPMorgan Chase & Co.", industry: "Finance", location: "New York", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
-    { ticker: "NFLX", company_name: "Netflix Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: -0.1, wms_2D: 0.0, wms_3D: -0.2 } },
-    { ticker: "PYPL", company_name: "PayPal Holdings Inc.", industry: "Finance", location: "California", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
-  ];
+    { ticker: "PYPL", company_name: "PayPal Holdings Inc.", industry: "Finance", location: "California", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },];
 
   const followedCompaniesData = [
     { ticker: "AAPL", company_name: "Apple Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: 0.2, wms_2D: -0.1, wms_3D: 0.3 } },
@@ -68,18 +50,13 @@ const fetchData = async () => {
     { ticker: "FB", company_name: "Meta Platforms Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: 0.4, wms_2D: 0.3, wms_3D: 0.2 } },
     { ticker: "NVDA", company_name: "NVIDIA Corporation", industry: "Technology", location: "California", sentiment: { wms_1D: 0.3, wms_2D: 0.2, wms_3D: 0.1 } },
     { ticker: "JPM", company_name: "JPMorgan Chase & Co.", industry: "Finance", location: "New York", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
-    { ticker: "NFLX", company_name: "Netflix Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: -0.1, wms_2D: 0.0, wms_3D: -0.2 } },
-    { ticker: "PYPL", company_name: "PayPal Holdings Inc.", industry: "Finance", location: "California", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
     { ticker: "FB", company_name: "Meta Platforms Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: 0.4, wms_2D: 0.3, wms_3D: 0.2 } },
     { ticker: "NVDA", company_name: "NVIDIA Corporation", industry: "Technology", location: "California", sentiment: { wms_1D: 0.3, wms_2D: 0.2, wms_3D: 0.1 } },
     { ticker: "JPM", company_name: "JPMorgan Chase & Co.", industry: "Finance", location: "New York", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
     { ticker: "NFLX", company_name: "Netflix Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: -0.1, wms_2D: 0.0, wms_3D: -0.2 } },
-    { ticker: "PYPL", company_name: "PayPal Holdings Inc.", industry: "Finance", location: "California", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
     { ticker: "FB", company_name: "Meta Platforms Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: 0.4, wms_2D: 0.3, wms_3D: 0.2 } },
     { ticker: "NVDA", company_name: "NVIDIA Corporation", industry: "Technology", location: "California", sentiment: { wms_1D: 0.3, wms_2D: 0.2, wms_3D: 0.1 } },
     { ticker: "JPM", company_name: "JPMorgan Chase & Co.", industry: "Finance", location: "New York", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
-    { ticker: "NFLX", company_name: "Netflix Inc.", industry: "Technology", location: "California", sentiment: { wms_1D: -0.1, wms_2D: 0.0, wms_3D: -0.2 } },
-    { ticker: "PYPL", company_name: "PayPal Holdings Inc.", industry: "Finance", location: "California", sentiment: { wms_1D: 0.2, wms_2D: 0.1, wms_3D: 0.3 } },
   ];
   
     return (
@@ -103,7 +80,7 @@ const fetchData = async () => {
                     <div className="stocks-content">
                         <h2 className='followed-companies'>Followed Companies</h2>
                             <Table data={followedCompaniesData} />
-                            <h2 className='wishlist'>Based on your wishlist</h2>
+                            <h2 className='wishlist'>Suggested For You</h2>
                             <Table data={recommendedCompaniesData} />
                     </div>
                 ) : (

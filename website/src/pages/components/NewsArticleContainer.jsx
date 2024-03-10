@@ -82,7 +82,8 @@ const NewsArticleComponent = ({start_time, end_time, use_following_companies, co
       let temp = {};
       temp["title"] = article.title;
       temp["summary"] = article.summary;
-      temp["url"] = article.body;
+      temp["url"] = article.url;
+
       temp["time_published"] = moment().subtract(article.time_published, 'day').format("Do MMMM,YYYY"); 
       /// THIS IS DEPENDENT ON FORMAT FROM DB -> MIGHT NOT BE POSSIBLE DEPENDING
 
@@ -91,6 +92,7 @@ const NewsArticleComponent = ({start_time, end_time, use_following_companies, co
       for (let t = 0; t < article.ticker_info.length; t++) {
         let tempCompany = {};
         let ticker = article.ticker_info[t].ticker;
+        console.log(data.companies[ticker], "this is the data companies ticker")
         tempCompany["name"] = data.companies[ticker].company_name;
         tempCompany["ticker"] = ticker;
         // console.log(ticker);
@@ -104,8 +106,8 @@ const NewsArticleComponent = ({start_time, end_time, use_following_companies, co
       cleaned.push(temp);
     }
     // console.log(cleaned);
-    // console.log(articleData);
     return cleaned.map(article => ({
+      
       title: article.title,
       summary: article.summary,
       url: article.url,
