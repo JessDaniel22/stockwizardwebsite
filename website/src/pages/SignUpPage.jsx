@@ -74,7 +74,7 @@ const SignUpPage = () => {
     let fullName = text.split(/\s+/);
     let success = await sendNewUser(email,password, fullName[0], fullName[1]);
     if (success) {
-      navigateToPage('/')
+      navigateToPage('/home')
     }
   }
       

@@ -50,7 +50,7 @@ const Header = ()  => {
   }, [isDropdownVisible]);
 
   const handleClick1 = () => {
-    navigate('/');
+    navigate('/home');
   };
  
   return (

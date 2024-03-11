@@ -26,11 +26,11 @@ function Sidebar() {
     <div className="sidebar">
       <div className="section1">
         <ul className='bullets'>
-          <li onClick={() => navigate('/')}><FontAwesomeIcon icon={faHome} /> <span>Home</span></li>
+          <li onClick={() => navigate('/home')}><FontAwesomeIcon icon={faHome} /> <span>Home</span></li>
           <li onClick={() => navigate('/profile')}><FontAwesomeIcon icon={faUser} /> <span>Following</span></li>
           <div className="divider"></div>
           <li onClick={() => navigate('/settings')}><FontAwesomeIcon icon={faCog} /> <span>Settings</span></li>
-          <li onClick={() => navigate('/login')}><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></li>
+          <li onClick={() => navigate('/')}><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></li>
         </ul>
       </div>
     </div>
