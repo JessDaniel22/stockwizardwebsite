@@ -3,6 +3,8 @@
 ## Introduction
 The Stock Wizard Website is a React.js web application that allows users to track and analyze stock market data. This documentation provides instructions on how to run the web app locally and how to use its features.
 
+github repo - https://github.com/JessDaniel22/stockwizardwebsite.git
+
 ## Prerequisites
 Before running the Stock Wizard Website, ensure that you have the following prerequisites installed on your machine:
 - Node.js (version 6.0.0 or higher)
