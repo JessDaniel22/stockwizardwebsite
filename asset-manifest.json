@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/stockwizardwebsite/static/css/main.b4160ac7.css",
-    "main.js": "/stockwizardwebsite/static/js/main.adfc634b.js",
-    "static/js/592.f195dc85.chunk.js": "/stockwizardwebsite/static/js/592.f195dc85.chunk.js",
-    "static/media/remixicon.svg?t=1705244689813": "/stockwizardwebsite/static/media/remixicon.426742b01cbcdd986634.svg",
-    "static/media/remixicon.eot?t=1705244689813": "/stockwizardwebsite/static/media/remixicon.ff1ec9ee899cf84e3449.eot",
-    "static/media/remixicon.ttf?t=1705244689813": "/stockwizardwebsite/static/media/remixicon.f1ed85ba47411bc8629e.ttf",
-    "static/media/remixicon.woff?t=1705244689813": "/stockwizardwebsite/static/media/remixicon.85d5afadad2b2c04b2fb.woff",
-    "static/media/bootstrap-icons.woff?": "/stockwizardwebsite/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
-    "static/media/cover-image-removebg-preview.png": "/stockwizardwebsite/static/media/cover-image-removebg-preview.23d38aaedf4254af526c.png",
-    "static/media/remixicon.woff2?t=1705244689813": "/stockwizardwebsite/static/media/remixicon.7124d0d7809bef5b73ab.woff2",
-    "static/media/bootstrap-icons.woff2?": "/stockwizardwebsite/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
-    "index.html": "/stockwizardwebsite/index.html",
-    "main.b4160ac7.css.map": "/stockwizardwebsite/static/css/main.b4160ac7.css.map",
-    "main.adfc634b.js.map": "/stockwizardwebsite/static/js/main.adfc634b.js.map",
-    "592.f195dc85.chunk.js.map": "/stockwizardwebsite/static/js/592.f195dc85.chunk.js.map"
+    "main.css": "/react-gh-pages/static/css/main.a0ba6c18.css",
+    "main.js": "/react-gh-pages/static/js/main.46f13820.js",
+    "static/js/592.f195dc85.chunk.js": "/react-gh-pages/static/js/592.f195dc85.chunk.js",
+    "static/media/remixicon.svg?t=1705244689813": "/react-gh-pages/static/media/remixicon.426742b01cbcdd986634.svg",
+    "static/media/remixicon.eot?t=1705244689813": "/react-gh-pages/static/media/remixicon.ff1ec9ee899cf84e3449.eot",
+    "static/media/remixicon.ttf?t=1705244689813": "/react-gh-pages/static/media/remixicon.f1ed85ba47411bc8629e.ttf",
+    "static/media/remixicon.woff?t=1705244689813": "/react-gh-pages/static/media/remixicon.85d5afadad2b2c04b2fb.woff",
+    "static/media/bootstrap-icons.woff?": "/react-gh-pages/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/cover-image-removebg-preview.png": "/react-gh-pages/static/media/cover-image-removebg-preview.23d38aaedf4254af526c.png",
+    "static/media/remixicon.woff2?t=1705244689813": "/react-gh-pages/static/media/remixicon.7124d0d7809bef5b73ab.woff2",
+    "static/media/bootstrap-icons.woff2?": "/react-gh-pages/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "index.html": "/react-gh-pages/index.html",
+    "main.a0ba6c18.css.map": "/react-gh-pages/static/css/main.a0ba6c18.css.map",
+    "main.46f13820.js.map": "/react-gh-pages/static/js/main.46f13820.js.map",
+    "592.f195dc85.chunk.js.map": "/react-gh-pages/static/js/592.f195dc85.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4160ac7.css",
-    "static/js/main.adfc634b.js"
+    "static/css/main.a0ba6c18.css",
+    "static/js/main.46f13820.js"
   ]
 }
