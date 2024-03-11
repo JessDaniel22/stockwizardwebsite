@@ -184,7 +184,7 @@ const SignUpPage = () => {
           <button className="register-button" disabled={!validEmail || !validPassword || !validMatch ? true : false}>Register</button>
         </form>
         <p className="login-link">
-          Already have an account? <a href="/login"> Log in</a>
+          Already have an account? <a href="/"> Log in</a>
         </p>
       </div>
     </div>

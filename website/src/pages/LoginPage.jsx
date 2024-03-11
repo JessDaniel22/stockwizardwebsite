@@ -16,7 +16,7 @@ function LoginPage() {
     e.preventDefault();
     let success = await sendUserDetails(email,password);
     if (success) {
-      navigateToPage('/')
+      navigateToPage('/home')
     }
   };
 
